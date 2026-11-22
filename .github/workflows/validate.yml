@@ -1,0 +1,17 @@
+name: Check the data
+
+# Runs the data checker on every change, so a broken or stale pick never goes live.
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check spotlights, quotes and the league table
+        run: python3 scripts/validate.py

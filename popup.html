@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spotted.</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="mast">
+    <h1 class="mast-title"><img src="icons/icon48.png" alt="" class="mast-gull"><span id="mast-title">Spotted.</span></h1>
+    <span id="mast-meta" class="mast-meta"></span>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" data-tab="spotlight" aria-selected="true">Spotlight</button>
+    <button role="tab" data-tab="guru" aria-selected="false">Guru says</button>
+    <button role="tab" data-tab="league" aria-selected="false">Ad League</button>
+    <button role="tab" data-tab="archive" aria-selected="false">Archive</button>
+  </nav>
+
+  <main>
+    <section id="tab-spotlight" role="tabpanel"></section>
+
+    <section id="tab-guru" role="tabpanel" hidden>
+      <blockquote id="quote-text" class="quote"></blockquote>
+      <a id="quote-person" class="quote-person" target="_blank" rel="noopener"></a>
+    </section>
+
+    <section id="tab-league" role="tabpanel" hidden>
+      <p class="kicker-line">Who's winning all the shiny things. Silly, but we care.</p>
+      <div class="league-head"><span>Agency</span><span>Street cred</span></div>
+      <ol id="league-list" class="league-list"></ol>
+      <button id="league-more" class="link-button" hidden>See the rest</button>
+      <p class="score-q">How we score?</p>
+      <p class="score-a">I bet you'd like to know. Awards actually won, plus work we reckon is dope.</p>
+      <p id="league-shows" class="muted small"></p>
+    </section>
+
+    <section id="tab-archive" role="tabpanel" hidden>
+      <div id="archive-list-view">
+        <input id="archive-search" class="search" type="search" placeholder="Brand, agency, award, whatever" aria-label="Search old picks">
+        <ul id="archive-list" class="archive-list"></ul>
+        <p id="archive-empty" class="muted small" hidden>Nothing. Try another word.</p>
+      </div>
+      <div id="archive-detail-view" hidden>
+        <button id="archive-back" class="link-button">← Back to old stuff</button>
+        <div id="archive-card"></div>
+      </div>
+    </section>
+  </main>
+
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

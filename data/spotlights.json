@@ -1,0 +1,602 @@
+{
+  "updated": "2026-11-22",
+  "rules": "One pick per weekday, none at weekends. Tuesdays and Thursdays are throwbacks (from 23 Nov 2026): major-award winners from the last year, marked throwback: true. Every other pick is fresh: shown only while it's 28 days old or less. campaignDate = launch or first trade coverage. Blurbs are written in our own words. award is null unless the work officially won a major award.",
+  "spotlights": [
+    {
+      "featureDate": "2026-11-02",
+      "campaignDate": "2026-11-01",
+      "brand": "Argos",
+      "agency": "T&P",
+      "agencyKey": "t-and-p",
+      "agencyUrl": null,
+      "campaign": "Tales of Argos Past",
+      "award": null,
+      "blurb": "Richard Ayoade plays Scrooge. Connie and Trevor are the ghosts. Argos taking the mick out of its own 'just toys' reputation. Nice.",
+      "source": {
+        "name": "Retail Gazette",
+        "url": "https://www.retailgazette.co.uk/blog/2026/11/argos-enlists-richard-ayoade-for-2026-christmas-advert/"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "retail",
+        "comedy"
+      ]
+    },
+    {
+      "featureDate": "2026-11-03",
+      "campaignDate": "2026-11-03",
+      "brand": "John Lewis",
+      "agency": "Saatchi & Saatchi",
+      "agencyKey": "saatchi-saatchi",
+      "agencyUrl": "https://saatchi.co.uk/",
+      "campaign": "Gloria and Pickles",
+      "award": null,
+      "blurb": "Gran stops handing out cash and builds the grandkids a Gran Cave instead. A Christmas ad telling you to buy an actual present. Sneaky. Works.",
+      "source": {
+        "name": "The Drum",
+        "url": "https://www.thedrum.com/news/john-lewis-christmas-ad-dame-kristin-scott-thomas-befriends-talking-toy-dog-pickles"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "retail",
+        "film"
+      ]
+    },
+    {
+      "featureDate": "2026-11-05",
+      "campaignDate": "2026-11-05",
+      "brand": "LEGO",
+      "agency": "Our LEGO Agency (in-house)",
+      "agencyKey": "our-lego-agency",
+      "agencyUrl": null,
+      "campaign": "The LEGO Holiday Workshop",
+      "award": null,
+      "blurb": "One brick travels through Daft Punk, Marvel and K-pop. Gifts so good you won't want to hand them over. Relatable.",
+      "source": {
+        "name": "ContentGrip",
+        "url": "https://www.contentgrip.com/lego-daft-punk-holiday-workshop/"
+      },
+      "tags": [
+        "christmas",
+        "toys",
+        "in-house",
+        "music"
+      ]
+    },
+    {
+      "featureDate": "2026-11-06",
+      "campaignDate": "2026-11-05",
+      "brand": "Arsenal",
+      "agency": "Arsenal Creative Studio (in-house)",
+      "agencyKey": "arsenal-creative-studio",
+      "agencyUrl": "https://www.arsenal.com/",
+      "campaign": "'Twas the Season",
+      "award": null,
+      "blurb": "Colin Firth narrates what sounds like Christmas morning. It's actually about winning the league. Fever Pitch fans, this one's for you.",
+      "source": {
+        "name": "ContentGrip",
+        "url": "https://www.contentgrip.com/arsenal-colin-firth-christmas/"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "football",
+        "sport"
+      ]
+    },
+    {
+      "featureDate": "2026-11-09",
+      "campaignDate": "2026-11-06",
+      "brand": "JD",
+      "agency": "Uncommon Creative Studio",
+      "agencyKey": "uncommon",
+      "agencyUrl": "https://www.uncommon.studio/",
+      "campaign": "Create The New",
+      "award": null,
+      "blurb": "25-odd athletes, musicians and designers making new stuff together. Barely mentions Christmas. Bold.",
+      "source": {
+        "name": "DesignRush",
+        "url": "https://news.designrush.com/jd-sports-uncommon-christmas-ad-create-the-new-the-reid-brothers"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "fashion",
+        "music",
+        "sport"
+      ]
+    },
+    {
+      "featureDate": "2026-11-10",
+      "campaignDate": "2026-11-06",
+      "brand": "M&S",
+      "agency": "Mother",
+      "agencyKey": "mother",
+      "agencyUrl": "https://www.motherlondon.com/",
+      "campaign": "The Home of Christmas",
+      "award": null,
+      "blurb": "Santa shaves off his beard to go Christmas shopping undercover. Santa is James Norton. The internet noticed.",
+      "source": {
+        "name": "Famous Campaigns",
+        "url": "https://www.famouscampaigns.com/2026/11/ms-might-just-have-won-christmas-with-its-beardless-santa/"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "retail",
+        "comedy"
+      ]
+    },
+    {
+      "featureDate": "2026-11-11",
+      "campaignDate": "2026-11-09",
+      "brand": "Oxfam",
+      "agency": "Happy Hour",
+      "agencyKey": "happy-hour",
+      "agencyUrl": null,
+      "campaign": "The List",
+      "award": null,
+      "blurb": "A kid's Christmas list floats off on a balloon and the neighbours sort every gift, second-hand. Twist: the list was never for him. Tissues.",
+      "source": {
+        "name": "Retail Times",
+        "url": "https://retailtimes.co.uk/oxfam-unveils-the-list-tv-ad-encouraging-the-nation-to-give-a-little-differently-this-festive-season/"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "charity",
+        "film"
+      ]
+    },
+    {
+      "featureDate": "2026-11-12",
+      "campaignDate": "2026-11-09",
+      "brand": "Disney",
+      "agency": "adam&eve\\TBWA",
+      "agencyKey": "adam-eve-tbwa",
+      "agencyUrl": "https://adamandevetbwa.com/",
+      "campaign": "The Invisible Horse",
+      "award": null,
+      "blurb": "A kid makes friends with a horse you never actually see. Hoofprints, wobbly furniture, done. Showing nothing and making you feel everything. Show-offs.",
+      "source": {
+        "name": "B&T",
+        "url": "https://www.bandt.com.au/an-invisible-horse-takes-the-reins-of-disneys-latest-christmas-campaign/"
+      },
+      "tags": [
+        "christmas",
+        "global",
+        "entertainment",
+        "film"
+      ]
+    },
+    {
+      "featureDate": "2026-11-13",
+      "campaignDate": "2026-11-09",
+      "brand": "Xfinity",
+      "agency": "Goodby Silverstein & Partners",
+      "agencyKey": "gsp",
+      "agencyUrl": "https://goodbysilverstein.com/",
+      "campaign": "The Ghost of Christmas Very-Recent-Past",
+      "award": null,
+      "blurb": "John C. Reilly haunts people glued to their phones and shows them what they just missed. A broadband brand telling you to log off. Bit cheeky.",
+      "source": {
+        "name": "Adweek",
+        "url": "https://www.adweek.com/creativity/xfinity-conjures-john-c-reilly-to-get-you-off-wi-fi-this-holiday-season/"
+      },
+      "tags": [
+        "christmas",
+        "us",
+        "tech",
+        "comedy"
+      ]
+    },
+    {
+      "featureDate": "2026-11-16",
+      "campaignDate": "2026-11-10",
+      "brand": "Waitrose",
+      "agency": "Wonderhood Studios",
+      "agencyKey": "wonderhood",
+      "agencyUrl": "https://wonderhoodstudios.com/",
+      "campaign": "The Perfect Gift 2",
+      "award": null,
+      "blurb": "Keira Knightley rom-com sequel where a beef Wellington crashes a wedding. Six minutes long. A supermarket made a film and nobody stopped them.",
+      "source": {
+        "name": "B&T",
+        "url": "https://www.bandt.com.au/in-between-two-men-a-beef-wellington-keira-knightley-returns-for-sequel-to-waitroses-the-perfect-gift/"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "food",
+        "comedy"
+      ]
+    },
+    {
+      "featureDate": "2026-11-17",
+      "campaignDate": "2026-11-10",
+      "brand": "Netflix",
+      "agency": "Mother (with Netflix's Brand Creative Studio)",
+      "agencyKey": "mother",
+      "agencyUrl": null,
+      "campaign": "Find the Thing You Never Knew You Needed",
+      "award": null,
+      "blurb": "A vampire risks daylight because his telly broke halfway through Love Is Blind. Relatable. Three mini-films about getting hooked on stuff you'd never pick.",
+      "source": {
+        "name": "The Drum",
+        "url": "https://www.thedrum.com/news/ad-of-the-day-netflix-sends-an-axolotl-on-a-mission-to-save-tv-night"
+      },
+      "tags": [
+        "global",
+        "us",
+        "entertainment",
+        "comedy"
+      ]
+    },
+    {
+      "featureDate": "2026-11-18",
+      "campaignDate": "2026-11-12",
+      "brand": "Apple",
+      "agency": "TBWA\\Media Arts Lab",
+      "agencyKey": "tbwa-media-arts-lab",
+      "agencyUrl": "https://mediaartslab.com/",
+      "campaign": "The Dreamer",
+      "award": null,
+      "blurb": "Boy hides his drawings for years, then his parents get him a MacBook. Nearly four minutes, no dialogue, art by Hebru Brantley. Yeah, it got us.",
+      "source": {
+        "name": "B&T",
+        "url": "https://www.bandt.com.au/apple-unwraps-a-festive-film-celebrating-the-power-of-creativity/"
+      },
+      "tags": [
+        "christmas",
+        "us",
+        "global",
+        "tech",
+        "film"
+      ]
+    },
+    {
+      "featureDate": "2026-11-19",
+      "campaignDate": "2026-11-17",
+      "brand": "The Entertainer",
+      "agency": "PrettyGreen",
+      "agencyKey": "prettygreen",
+      "agencyUrl": null,
+      "campaign": "Play. Their Way",
+      "award": null,
+      "blurb": "Kids turn the living room into a racetrack and fire RC cars at the sprouts. Dad caves. No tears, no piano. Just noise.",
+      "source": {
+        "name": "Toy World",
+        "url": "https://toyworldmag.co.uk/the-entertainer-unveils-2026-christmas-ad/"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "retail",
+        "toys"
+      ]
+    },
+    {
+      "featureDate": "2026-11-20",
+      "campaignDate": "2026-11-19",
+      "brand": "Coca-Cola",
+      "agency": "Ogilvy (WPP Open X)",
+      "agencyKey": "ogilvy",
+      "agencyUrl": "https://www.ogilvy.com/",
+      "campaign": "Enjoy Joy",
+      "award": null,
+      "blurb": "After two years of AI-made Christmas ads, Coke's back to filming actual people. Turkey frying, football, family. Humans: back in fashion.",
+      "source": {
+        "name": "Marketing Dive",
+        "url": "https://www.marketingdive.com/news/coca-cola-pivots-from-divisive-ai-generated-ads-for-holiday-campaign/875215/"
+      },
+      "tags": [
+        "christmas",
+        "us",
+        "global",
+        "drinks"
+      ]
+    },
+    {
+      "featureDate": "2026-11-23",
+      "campaignDate": "2026-11-01",
+      "brand": "Tesco",
+      "agency": "BBH London",
+      "agencyKey": "bbh-london",
+      "agencyUrl": null,
+      "campaign": "The Wrong Address",
+      "award": null,
+      "blurb": "Christmas shop sent to her old house. A delivery driver sorts it. Very British panic, very nice ending.",
+      "source": {
+        "name": "Creative Salon",
+        "url": "https://creative.salon/articles/work/tesco-the-wrong-address-bbh"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "retail"
+      ]
+    },
+    {
+      "featureDate": "2026-11-24",
+      "brand": "KitKat",
+      "agency": "VML UK & Burson",
+      "agencyKey": "burson",
+      "agencyUrl": null,
+      "campaign": "The KitKat Heist",
+      "award": {
+        "show": "Cannes Lions 2026",
+        "prize": "Grand Prix, PR",
+        "year": 2026
+      },
+      "blurb": "Someone nicked 12 tonnes of KitKats. They let everyone track it. We get it. Fair.",
+      "source": {
+        "name": "LBB",
+        "url": "https://lbbonline.com/news/kitkat-heist-grand-prix-cannes-lions"
+      },
+      "tags": [
+        "pr",
+        "food"
+      ],
+      "throwback": true
+    },
+    {
+      "featureDate": "2026-11-25",
+      "campaignDate": "2026-11-01",
+      "brand": "Sainsbury's",
+      "agency": "New Commercial Arts",
+      "agencyKey": "new-commercial-arts",
+      "agencyUrl": null,
+      "campaign": "The Big Delivery",
+      "award": null,
+      "blurb": "The BFG has a cold, so two staff drive dinner into Giant Country. Year three of the giant. Still not bored.",
+      "source": {
+        "name": "Ads of the World",
+        "url": "https://www.adsoftheworld.com/campaigns/the-big-delivery"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "retail"
+      ]
+    },
+    {
+      "featureDate": "2026-11-26",
+      "brand": "Heineken",
+      "agency": "Publicis Dublin & LePub Milan",
+      "agencyKey": "lepub",
+      "agencyUrl": null,
+      "campaign": "The Pub That Refused To Die",
+      "award": {
+        "show": "Cannes Lions 2026",
+        "prize": "Grand Prix, Creative Strategy",
+        "year": 2026
+      },
+      "blurb": "A village of 214 people saved their last pub, and Heineken made it a documentary. Beer ad, zero beer chat.",
+      "source": {
+        "name": "LBB",
+        "url": "https://lbbonline.com/news/publicis-dublin-heineken-cannes-lions-grand-prix"
+      },
+      "tags": [
+        "drinks",
+        "documentary",
+        "ireland"
+      ],
+      "throwback": true
+    },
+    {
+      "featureDate": "2026-11-27",
+      "campaignDate": "2026-11-12",
+      "brand": "Barclays",
+      "agency": "VCCP",
+      "agencyKey": "vccp",
+      "agencyUrl": null,
+      "campaign": "We've Got Your Back",
+      "award": null,
+      "blurb": "Mimes stalking people and copying their every move. That's fraud. Creepier than any scary stat, and the song is 'Somebody's Watching Me'. Obviously.",
+      "source": {
+        "name": "Creative Salon",
+        "url": "https://creative.salon/articles/work/barclays-vccp-girl-bear-fraudsters"
+      },
+      "tags": [
+        "uk",
+        "finance",
+        "fraud"
+      ]
+    },
+    {
+      "featureDate": "2026-11-30",
+      "campaignDate": "2026-11-03",
+      "brand": "Asda",
+      "agency": "Lucky Generals",
+      "agencyKey": "lucky-generals",
+      "agencyUrl": null,
+      "campaign": "All of Christmas at Asda Price. BOOM!",
+      "award": null,
+      "blurb": "Nice Christmas scenes, then a giant cracker goes off. Fewer tears, more pyro.",
+      "source": {
+        "name": "DesignRush",
+        "url": "https://news.designrush.com/asda-2026-christmas-campaign-lucky-generals"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "retail",
+        "comedy"
+      ]
+    },
+    {
+      "featureDate": "2026-12-01",
+      "brand": "Currys",
+      "agency": "AMV BBDO (with Spark Foundry)",
+      "agencyKey": "amv-bbdo",
+      "agencyUrl": null,
+      "campaign": "The Superpower In-store",
+      "award": {
+        "show": "IPA Effectiveness Awards 2026",
+        "prize": "Grand Prix",
+        "year": 2026
+      },
+      "blurb": "Made the shop staff the hero instead of fighting Amazon. £500m extra. The boring stuff works.",
+      "source": {
+        "name": "Creative Salon",
+        "url": "https://creative.salon/articles/features/how-amv-turned-currys-biggest-vulnerability-into-an-effectiveness-grand-prix"
+      },
+      "tags": [
+        "uk",
+        "retail",
+        "effectiveness"
+      ],
+      "throwback": true
+    },
+    {
+      "featureDate": "2026-12-02",
+      "campaignDate": "2026-11-05",
+      "brand": "Aldi",
+      "agency": "McCann Manchester",
+      "agencyKey": "mccann-manchester",
+      "agencyUrl": null,
+      "campaign": "The Christmas Wish",
+      "award": null,
+      "blurb": "Kevin the Carrot hunts for a missing cauliflower dog. Year ten, still the weirdest thing on telly. Respect.",
+      "source": {
+        "name": "Grocery Gazette",
+        "url": "https://www.grocerygazette.co.uk/2026/11/05/watch-aldi-releases-full-christmas-2026-advert-starring-kevin-the-carrot/"
+      },
+      "tags": [
+        "christmas",
+        "uk",
+        "retail"
+      ]
+    },
+    {
+      "featureDate": "2026-12-03",
+      "brand": "The Ordinary",
+      "agency": "Uncommon Creative Studio",
+      "agencyKey": "uncommon",
+      "agencyUrl": null,
+      "campaign": "The Periodic Fable",
+      "award": {
+        "show": "Cannes Lions 2026",
+        "prize": "Grand Prix, Health & Wellness",
+        "year": 2026
+      },
+      "blurb": "A periodic table of 49 beauty buzzwords. Skincare brand roasting skincare marketing. Brave.",
+      "source": {
+        "name": "D&AD",
+        "url": "https://www.dandad.org/work/annual-2026/behind-the-work/how-the-ordinary-created-a-twisted-science-lesson-to-expose-beauty-industry-myths"
+      },
+      "tags": [
+        "beauty",
+        "health"
+      ],
+      "throwback": true
+    },
+    {
+      "featureDate": "2026-12-04",
+      "campaignDate": "2026-11-08",
+      "brand": "EchoPark",
+      "agency": "VML New York",
+      "agencyKey": "vml-new-york",
+      "agencyUrl": null,
+      "campaign": "Every Car, Happy Owner",
+      "award": null,
+      "blurb": "Owen Wilson suffers through buying a used car so you don't have to. Wow.",
+      "source": {
+        "name": "Ads of the World",
+        "url": "https://www.adsoftheworld.com/campaigns/every-car-happy-owner"
+      },
+      "tags": [
+        "us",
+        "cars",
+        "comedy",
+        "celebrity"
+      ]
+    },
+    {
+      "featureDate": "2026-12-07",
+      "campaignDate": "2026-11-12",
+      "brand": "Johnnie Walker",
+      "agency": "MA+ Group",
+      "agencyKey": "ma-plus-group",
+      "agencyUrl": null,
+      "campaign": "Keep Walking (Sabrina Carpenter)",
+      "award": null,
+      "blurb": "Hired the La La Land director to film Sabrina Carpenter walking. In a whisky ad. Fair, it's on the bottle.",
+      "source": {
+        "name": "DesignRush",
+        "url": "https://news.designrush.com/johnnie-walker-sabrina-carpenter-damien-chazelle-ma-group-keep-walking-film"
+      },
+      "tags": [
+        "drinks",
+        "celebrity",
+        "film"
+      ]
+    },
+    {
+      "featureDate": "2026-12-09",
+      "campaignDate": "2026-11-16",
+      "brand": "Meow Mix",
+      "agency": "BBH USA",
+      "agencyKey": "bbh-usa",
+      "agencyUrl": null,
+      "campaign": "Behind the Memeow",
+      "award": null,
+      "blurb": "Fake behind-the-scenes of Keyboard Cat and Huh Cat. The internet's oldest cats finally get a pay day.",
+      "source": {
+        "name": "Marketing Dive",
+        "url": "https://www.marketingdive.com/news/meow-mix-reimagines-iconic-cat-memes-for-multichannel-campaign/874724/"
+      },
+      "tags": [
+        "us",
+        "pets",
+        "memes",
+        "comedy"
+      ]
+    },
+    {
+      "featureDate": "2026-12-11",
+      "campaignDate": "2026-11-17",
+      "brand": "McDonald's",
+      "agency": "Wieden+Kennedy Toronto",
+      "agencyKey": "wk",
+      "agencyUrl": "https://www.wk.com/",
+      "campaign": "Home Alone",
+      "award": null,
+      "blurb": "Macaulay Culkin is home alone again. In a McDonald's. 36 years later. They just went and did it.",
+      "source": {
+        "name": "The Drum",
+        "url": "https://www.thedrum.com/news/ad-of-the-day-macaulay-culkin-is-home-alone-again-this-time-in-a-mcdonald-s"
+      },
+      "tags": [
+        "christmas",
+        "global",
+        "canada",
+        "food",
+        "nostalgia"
+      ]
+    },
+    {
+      "featureDate": "2026-12-14",
+      "campaignDate": "2026-11-20",
+      "brand": "NSPCA",
+      "agency": "The Public House",
+      "agencyKey": "the-public-house",
+      "agencyUrl": null,
+      "campaign": "Your Donation Does More",
+      "award": null,
+      "blurb": "Tiny lines on what a fiver actually does. Fill bellies, mend paws. Short, clear, works.",
+      "source": {
+        "name": "AdWorld.ie",
+        "url": "https://www.adworld.ie/2026/11/20/the-public-house-launches-new-nspca-campaign-your-donation-does-more/"
+      },
+      "tags": [
+        "ireland",
+        "charity",
+        "animals"
+      ]
+    }
+  ],
+  "throwbacksFrom": "2026-11-23"
+}

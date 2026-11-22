@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Spotted. Dope Daily Ad Campaigns",
+  "short_name": "Spotted.",
+  "version": "0.1.0",
+  "description": "A dope new ad campaign every day at midday. Who made it (agency or in-house), why it's good, and who's winning the shiny things.",
+  "action": {
+    "default_title": "Spotted.",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "alarms", "notifications"]
+}

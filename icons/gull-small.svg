@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <title>Spotted. gull, small</title>
+  <!-- Simplified head-and-hat version for 16px and 32px toolbar sizes -->
+  <rect width="32" height="32" rx="7" fill="#E24B4A"/>
+  <circle cx="14" cy="19" r="8.5" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="1.6"/>
+  <polygon points="21.5,17 30,19.5 21.5,22" fill="#EF9F27" stroke="#854F0B" stroke-width="0.6"/>
+  <circle cx="17" cy="17.5" r="1.7" fill="#2C2C2A"/>
+  <line x1="14.5" y1="14.6" x2="19.2" y2="15.4" stroke="#2C2C2A" stroke-width="1.3" stroke-linecap="round"/>
+  <g transform="rotate(-8 14 11)">
+    <rect x="9" y="2" width="10" height="9.5" rx="1" fill="#2C2C2A"/>
+    <rect x="5.5" y="10.5" width="17" height="2.4" rx="1.2" fill="#2C2C2A"/>
+  </g>
+</svg>

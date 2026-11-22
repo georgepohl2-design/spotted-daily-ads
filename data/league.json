@@ -1,0 +1,539 @@
+{
+  "year": 2026,
+  "rules": "Top prizes only, officially awarded in 2026. Each one = 10 street cred. Each time an agency's work is featured in Spotted = 3 street cred (counted automatically from spotlights.json, only once the feature date has passed). Credit goes to the lead agency as named in the official results.",
+  "points": {
+    "topPrize": 10,
+    "spottedFeature": 3
+  },
+  "showsCounted": [
+    "Cannes Lions 2026",
+    "D&AD 2026"
+  ],
+  "showsNotYet": [
+    "The One Show",
+    "Clio Awards",
+    "Effie",
+    "Epica",
+    "IPA Effectiveness",
+    "Kantar Creative Effectiveness",
+    "LIA",
+    "ADC",
+    "Webby",
+    "Eurobest (December)"
+  ],
+  "agencies": {
+    "isle-of-any": {
+      "name": "Isle of Any",
+      "url": "https://www.isleofany.com/"
+    },
+    "uncommon": {
+      "name": "Uncommon Creative Studio",
+      "url": "https://www.uncommon.studio/"
+    },
+    "publicis-conseil": {
+      "name": "Publicis Conseil",
+      "url": "https://www.publicisconseil.fr/"
+    },
+    "lepub": {
+      "name": "LePub",
+      "url": null
+    },
+    "johannes-leonardo": {
+      "name": "Johannes Leonardo",
+      "url": "https://johannesleonardo.com/"
+    },
+    "mother": {
+      "name": "Mother",
+      "url": "https://www.motherlondon.com/"
+    },
+    "adam-eve-tbwa": {
+      "name": "adam&eve\\TBWA",
+      "url": "https://adamandevetbwa.com/"
+    },
+    "tbwa-media-arts-lab": {
+      "name": "TBWA\\Media Arts Lab",
+      "url": "https://mediaartslab.com/"
+    },
+    "bbdo-puerto-rico": {
+      "name": "BBDO Puerto Rico",
+      "url": null
+    },
+    "gut": {
+      "name": "Gut",
+      "url": null
+    },
+    "rethink": {
+      "name": "Rethink",
+      "url": null
+    },
+    "google": {
+      "name": "Google (in-house)",
+      "url": null
+    },
+    "lola": {
+      "name": "Lola",
+      "url": null
+    },
+    "nord": {
+      "name": "Nord",
+      "url": null
+    },
+    "circus-grey": {
+      "name": "Circus Grey",
+      "url": null
+    },
+    "de-la-cruz-ogilvy": {
+      "name": "De La Cruz Ogilvy",
+      "url": null
+    },
+    "special": {
+      "name": "Special",
+      "url": "https://specialgroup.com/"
+    },
+    "burson": {
+      "name": "Burson",
+      "url": "https://www.bursonglobal.com/"
+    },
+    "canada": {
+      "name": "Canada (production company)",
+      "url": null
+    },
+    "david": {
+      "name": "David",
+      "url": "https://www.davidtheagency.com/"
+    },
+    "mccann-lima": {
+      "name": "McCann Lima",
+      "url": null
+    },
+    "mccann-athens": {
+      "name": "McCann Athens",
+      "url": null
+    },
+    "vml-poland": {
+      "name": "VML Poland",
+      "url": null
+    },
+    "tbwa-canada": {
+      "name": "TBWA\\Canada",
+      "url": null
+    },
+    "wesayhi": {
+      "name": "WeSayHi",
+      "url": null
+    },
+    "differ": {
+      "name": "Differ",
+      "url": null
+    },
+    "fallon": {
+      "name": "Fallon",
+      "url": "https://www.fallon.com/"
+    },
+    "art-plan": {
+      "name": "Art Plan",
+      "url": null
+    },
+    "rainbow-lobster": {
+      "name": "Rainbow Lobster",
+      "url": null
+    },
+    "partnership-agency": {
+      "name": "The Partnership Agency",
+      "url": null
+    },
+    "leo-australia": {
+      "name": "Leo Australia",
+      "url": null
+    },
+    "saatchi-saatchi": {
+      "name": "Saatchi & Saatchi",
+      "url": "https://saatchi.co.uk/"
+    },
+    "t-and-p": {
+      "name": "T&P",
+      "url": null
+    },
+    "arsenal-creative-studio": {
+      "name": "Arsenal Creative Studio",
+      "url": "https://www.arsenal.com/"
+    },
+    "happy-hour": {
+      "name": "Happy Hour",
+      "url": null
+    },
+    "wonderhood": {
+      "name": "Wonderhood Studios",
+      "url": "https://wonderhoodstudios.com/"
+    },
+    "gsp": {
+      "name": "Goodby Silverstein & Partners",
+      "url": "https://goodbysilverstein.com/"
+    },
+    "wk": {
+      "name": "Wieden+Kennedy",
+      "url": "https://www.wk.com/"
+    },
+    "prettygreen": {
+      "name": "PrettyGreen",
+      "url": null
+    },
+    "ogilvy": {
+      "name": "Ogilvy",
+      "url": "https://www.ogilvy.com/"
+    },
+    "vccp": {
+      "name": "VCCP",
+      "url": null
+    },
+    "bbh-london": {
+      "name": "BBH London",
+      "url": null
+    },
+    "new-commercial-arts": {
+      "name": "New Commercial Arts",
+      "url": null
+    },
+    "lucky-generals": {
+      "name": "Lucky Generals",
+      "url": null
+    },
+    "vml-new-york": {
+      "name": "VML New York",
+      "url": null
+    },
+    "the-public-house": {
+      "name": "The Public House",
+      "url": null
+    },
+    "mccann-manchester": {
+      "name": "McCann Manchester",
+      "url": null
+    },
+    "our-lego-agency": {
+      "name": "Our LEGO Agency",
+      "url": null
+    },
+    "ma-plus-group": {
+      "name": "MA+ Group",
+      "url": null
+    },
+    "bbh-usa": {
+      "name": "BBH USA",
+      "url": null
+    },
+    "amv-bbdo": {
+      "name": "AMV BBDO",
+      "url": null
+    }
+  },
+  "wins": [
+    {
+      "agencyKey": "bbdo-puerto-rico",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Audio & Radio",
+      "brand": "Hyundai",
+      "work": "Coquí Alarmed"
+    },
+    {
+      "agencyKey": "mother",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Film",
+      "brand": "Anthropic (Claude)",
+      "work": "Claude Super Bowl spots"
+    },
+    {
+      "agencyKey": "gut",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Outdoor",
+      "brand": "Mercado Livre",
+      "work": "Field Barcode"
+    },
+    {
+      "agencyKey": "rethink",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Print & Publishing",
+      "brand": "Heinz",
+      "work": "Look Familiar?"
+    },
+    {
+      "agencyKey": "tbwa-media-arts-lab",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Design",
+      "brand": "Apple",
+      "work": "Apple TV rebrand"
+    },
+    {
+      "agencyKey": "google",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Digital Craft",
+      "brand": "Google",
+      "work": "Project Genie"
+    },
+    {
+      "agencyKey": "isle-of-any",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Film Craft",
+      "brand": "Coinbase",
+      "work": "Your Way Out"
+    },
+    {
+      "agencyKey": "lola",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Industry Craft",
+      "brand": "De'Longhi",
+      "work": "Tiny Coffee Shops"
+    },
+    {
+      "agencyKey": "nord",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Creative B2B",
+      "brand": "SKF",
+      "work": "The Faroe Islands Space Program"
+    },
+    {
+      "agencyKey": "circus-grey",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Creative Data",
+      "brand": "BCP",
+      "work": "SOS POS"
+    },
+    {
+      "agencyKey": "de-la-cruz-ogilvy",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Direct",
+      "brand": "Uva App",
+      "work": "Uva Uva Bombón"
+    },
+    {
+      "agencyKey": "special",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Media",
+      "brand": "Uber Eats",
+      "work": "Build Your Own Super Bowl Commercial"
+    },
+    {
+      "agencyKey": "burson",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "PR",
+      "brand": "KitKat",
+      "work": "The KitKat Heist"
+    },
+    {
+      "agencyKey": "lepub",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Social & Creator",
+      "brand": "Heineken",
+      "work": "Could Have Been A Heineken"
+    },
+    {
+      "agencyKey": "johannes-leonardo",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Entertainment",
+      "brand": "adidas Originals",
+      "work": "Original Forever"
+    },
+    {
+      "agencyKey": "david",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Entertainment for Gaming",
+      "brand": "Clash Royale",
+      "work": "Copycats Welcome"
+    },
+    {
+      "agencyKey": "johannes-leonardo",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Entertainment for Music",
+      "brand": "adidas Originals",
+      "work": "Original Forever"
+    },
+    {
+      "agencyKey": "canada",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Entertainment for Music",
+      "brand": "Rosalía ft Björk and Yves Tumor",
+      "work": "Berghain"
+    },
+    {
+      "agencyKey": "mccann-lima",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Entertainment for Sport",
+      "brand": "Club Deportivo Municipal",
+      "work": "The Thousand Sponsors of Muni"
+    },
+    {
+      "agencyKey": "adam-eve-tbwa",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Brand Experience & Activation",
+      "brand": "Columbia Sportswear",
+      "work": "Expedition Impossible",
+      "note": "Credited as adam&eveDDB\\TBWA"
+    },
+    {
+      "agencyKey": "mccann-athens",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Creative Business Transformation",
+      "brand": "Wikifarmer",
+      "work": "The Wedding Rice"
+    },
+    {
+      "agencyKey": "vml-poland",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Creative Commerce",
+      "brand": "Wisła Kraków",
+      "work": "Lucky Fan Index"
+    },
+    {
+      "agencyKey": "tbwa-canada",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Innovation",
+      "brand": "adidas",
+      "work": "Supernova Adaptive"
+    },
+    {
+      "agencyKey": "wesayhi",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Luxury",
+      "brand": "Moncler",
+      "work": "Warmer Together"
+    },
+    {
+      "agencyKey": "uncommon",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Health & Wellness",
+      "brand": "The Ordinary",
+      "work": "The Periodic Fable"
+    },
+    {
+      "agencyKey": "differ",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Health Campaign for Good",
+      "brand": "Caritas",
+      "work": "Vehicle of Hope"
+    },
+    {
+      "agencyKey": "fallon",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Pharma",
+      "brand": "Novartis",
+      "work": "Relax Your Tight End"
+    },
+    {
+      "agencyKey": "publicis-conseil",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Creative Effectiveness",
+      "brand": "AXA France",
+      "work": "Three Words"
+    },
+    {
+      "agencyKey": "lepub",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Creative Strategy",
+      "brand": "Heineken",
+      "work": "The Pub That Refused To Die"
+    },
+    {
+      "agencyKey": "art-plan",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Glass Lion for Change",
+      "brand": "Idomed & Instituto Yduqs",
+      "work": "Nigrum Corpus"
+    },
+    {
+      "agencyKey": "rainbow-lobster",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Grand Prix for Good",
+      "brand": "Comando Con Venezuela",
+      "work": "Book Network"
+    },
+    {
+      "agencyKey": "partnership-agency",
+      "show": "Cannes Lions 2026",
+      "prize": "Grand Prix",
+      "category": "Sustainable Development Goals",
+      "brand": "Too Good",
+      "work": "Paid Sick Leave For Cows"
+    },
+    {
+      "agencyKey": "leo-australia",
+      "show": "Cannes Lions 2026",
+      "prize": "Titanium Grand Prix",
+      "category": "Titanium",
+      "brand": "Suncorp Insurance",
+      "work": "Haven"
+    },
+    {
+      "agencyKey": "isle-of-any",
+      "show": "D&AD 2026",
+      "prize": "Black Pencil",
+      "category": "Visual Effects",
+      "brand": "Coinbase",
+      "work": "Your Way Out"
+    },
+    {
+      "agencyKey": "isle-of-any",
+      "show": "D&AD 2026",
+      "prize": "Black Pencil",
+      "category": "Production Design",
+      "brand": "Coinbase",
+      "work": "Your Way Out"
+    },
+    {
+      "agencyKey": "uncommon",
+      "show": "D&AD 2026",
+      "prize": "Black Pencil",
+      "category": "Art Direction",
+      "brand": "The Ordinary",
+      "work": "The Periodic Fable"
+    },
+    {
+      "agencyKey": "publicis-conseil",
+      "show": "D&AD 2026",
+      "prize": "Black Pencil",
+      "category": "Impact",
+      "brand": "AXA",
+      "work": "Three Words"
+    }
+  ],
+  "sources": {
+    "Cannes Lions 2026": {
+      "official": "https://www.canneslions.com/",
+      "reported": "https://www.creativereview.co.uk/cannes-lions-2026-all-the-grand-prix-winners/"
+    },
+    "D&AD 2026": {
+      "official": "https://www.dandad.org/",
+      "reported": "https://www.adweek.com/creativity/these-are-the-4-black-pencil-winners-of-the-2026-dad-awards/"
+    }
+  }
+}
