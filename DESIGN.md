@@ -9,7 +9,7 @@ Agreed on 21 Nov 2026, through several rounds of wireframes.
 - **Voice (everywhere):** chill, blunt, to the point, a bit "can't be bothered". Short sentences. Example: "People want to steal KitKats. We get it. They made an ad about it. Fair." Facts stay straight; the attitude lives in the words around them. Joke about the awards circus, never about named agencies' work or people.
 
 ## Popup (about 360px wide), four tabs
-1. **Spotlight** (not "Today": it's a spotlight, not the news)
+1. **Spotted ad** (renamed from "Spotlight" on 23 Nov: it matches the name of the thing)
    - small red label: "SPOTTED AD:", then the brand (big), then "by {agency}" (bold, 18px, linked), then labelled "Campaign" and "Why it's good" rows split by thin lines
    - **Brand name**: the biggest thing on the card
    - by **Agency name** (smaller, links to the agency's website)

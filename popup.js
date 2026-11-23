@@ -127,7 +127,7 @@ function renderLeague() {
   list.replaceChildren(...shown.map((r, idx) => {
     if (r.cred !== prev) { rank = idx + 1; prev = r.cred; }
     const why = [
-      r.prizes ? `${r.prizes} top prize${r.prizes > 1 ? 's' : ''}` : null,
+      r.prizes ? `${r.prizes} award${r.prizes > 1 ? 's' : ''}` : null,
       r.features ? `spotted ${r.features}×` : null,
     ].filter(Boolean).join(', ');
     return el('li', { title: why },

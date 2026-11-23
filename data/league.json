@@ -3,7 +3,19 @@
   "rules": "Top prizes only, officially awarded in 2026. Each one = 10 street cred. Each time an agency's work is featured in Spotted = 3 street cred (counted automatically from spotlights.json, only once the feature date has passed). Credit goes to the lead agency as named in the official results.",
   "points": {
     "topPrize": 10,
-    "spottedFeature": 3
+    "prizes": {
+      "grand prix": 10,
+      "titanium": 10,
+      "black pencil": 10,
+      "grand effie": 10,
+      "gold": 6,
+      "yellow pencil": 6,
+      "silver": 4,
+      "bronze": 2
+    },
+    "smallShow": 1,
+    "spottedFeature": 3,
+    "_note": "Street cred depends on the level of the prize: 10 for the biggest (Grand Prix, Titanium, Black Pencil, Grand Effie), down to 2 for a Bronze. Any prize at a smaller show counts 1. Each Spotted. feature adds 3."
   },
   "showsCounted": [
     "Cannes Lions 2026",
@@ -535,5 +547,13 @@
       "official": "https://www.dandad.org/",
       "reported": "https://www.adweek.com/creativity/these-are-the-4-black-pencil-winners-of-the-2026-dad-awards/"
     }
-  }
+  },
+  "smallShows": [
+    "The Drum Awards",
+    "Campaign Big Awards",
+    "Creative Circle",
+    "Shark Awards",
+    "Kinsale Sharks",
+    "Roses Creative Awards"
+  ]
 }

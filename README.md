@@ -1,10 +1,14 @@
 # Spotted.
 
-![Spotted. Chrome extension: Spotlight, Ad League, Guru says and Archive screens](docs/cover.png)
+![Spotted. Chrome extension: the Spotted ad, Ad League, Guru says and Archive screens](docs/cover.png)
 
-**A dope new ad campaign every day at midday, in a Chrome extension. Plus the Ad League: a cheeky league table of which agencies are actually winning all the shiny things.**
+**A dope new ad campaign revealed every weekday at midday, right in your Chrome toolbar.**
 
-Who's winning all the shiny things? Silly, but we care.
+- **Monday, Wednesday and Friday:** a recent campaign, launched in the last few weeks.
+- **Throwback Tuesday and Throwback Thursday:** a campaign from the last year that won something big. Not new. Still slaps.
+- **Weekends off.** Open it on a Saturday and the gull tells you to go outside.
+
+If you're in marketing or advertising and you like ads, give it a follow. Or don't. We don't care.
 
 ---
 
@@ -12,27 +16,24 @@ Who's winning all the shiny things? Silly, but we care.
 
 Good marketers keep a swipe file: a folder of ads they wish they'd made. I've kept one for years.
 
-But keeping up is a faff. The good stuff is spread across The Drum, Adweek, Ad Age, Campaign, LBB, Creative Review and a dozen podcasts and LinkedIn feeds. Most days you either doom-scroll trade press or miss the work everyone's talking about.
+But keeping up is a faff. The good stuff is spread across publications, award shows, LinkedIn, YouTube, influencers and podcasts. Most days you either doom-scroll the lot or miss the work everyone's talking about.
 
-**Spotted. is a swipe file that fills itself.** One campaign a day, picked for you, in two lines, with a link to read more.
+**Spotted. is a swipe file that fills itself.** We go through all of it, review it, and bring you one a day: two lines on why it's good, and a link to see more.
 
-## What it does
+## The Spotted ad
 
-Click the seagull in your Chrome toolbar and you get four tabs:
+Click the seagull in your Chrome toolbar and you get the day's ad:
 
-| Tab | What you get |
-|---|---|
-| **Spotlight** | One campaign: **brand**, agency (linked), campaign name, an award badge only if it won a major award, two blunt lines on why it's good, and a link to the source article. |
-| **Guru says** | A line from an ad legend: Rory Sutherland, David Ogilvy, Leo Burnett, Dave Trott, Scott Galloway. Every quote is checked against a real source. |
-| **Ad League** | The 2K26 season agency league table, ranked by *street cred*. |
-| **Archive** | Every past pick. Search by brand, agency, award or anything else. |
+- **The brand**, big.
+- **Who made it:** the agency, or the brand's in-house team.
+- **The campaign name**, with a yellow badge only if it's won a major award.
+- **Why it's good**, in two blunt lines.
+- **A link** to read more on a free-to-read site.
 
 Plus:
-- **A yellow dot** on the icon when there's a new pick you haven't seen.
-- **A midday nudge**: a Chrome notification at 12:00 ("Disney by adam&eve\\TBWA") when the new campaign lands.
-- **Throwback Tuesday and Throwback Thursday.** Two days a week it's a major-award winner from the last year instead of something new. Labelled "Throwback Thursday: still slaps".
-- **Weekends off.** No pings on Saturday or Sunday. Open it anyway and the gull tells you to go outside.
-- **Nothing stale.** A pick is never shown more than four weeks after the campaign launched or was covered. If there's nothing fresh, the gull goes on a break.
+- **A yellow dot** on the icon when there's a new ad you haven't seen.
+- **A midday ping:** a notification at 12:00 on weekdays, like "Tesco by BBH London".
+- **Nothing stale.** A fresh pick is never shown more than four weeks after the campaign launched.
 
 **No tracking, no accounts, no API keys** inside the extension. It reads a public list of picks and that's it.
 
@@ -54,48 +55,63 @@ To update later, download the ZIP again, replace the folder, and press the ↻ r
 
 ```mermaid
 flowchart LR
-    A[Trade press, award results, podcasts] -->|researched and fact-checked| B[data/spotlights.json in this repo]
-    B -->|GitHub Pages| C[Public copy of the picks]
-    C -->|read once a day| D[Spotted. in your Chrome]
-    B -.->|copy bundled inside, in case you're offline| D
-    E[Weekly Claude routine, coming next] -.->|lines up next week's 5 picks, checked automatically| B
+    A[Publications, award shows, LinkedIn, YouTube, influencers, podcasts] -->|every Sunday| B[Claude lines up several picks for the week]
+    B --> C[Each ad reviewed manually to make sure it's legit]
+    C -->|approved| D[data/spotlights.json in this repo]
+    D -->|GitHub Pages| E[Public copy of the picks]
+    E -->|checked daily| F[Spotted. in your Chrome]
+    D -.->|copy bundled inside, in case you're offline| F
 ```
 
-- All the picks live in [`data/spotlights.json`](data/spotlights.json). One entry per day.
-- The extension reads the latest copy from GitHub Pages, and falls back to the copy bundled inside it if you're offline.
-- A [checker](scripts/validate.py) runs on every change and blocks anything broken: missing facts, a link that isn't secure, two picks on one day, or a campaign more than four weeks old.
-- New picks will be lined up each week by a scheduled Claude routine. See [AUTOMATION.md](AUTOMATION.md).
+1. **Every Sunday, a scheduled Claude routine lines up the next week's picks to review:** three fresh campaigns and two throwbacks.
+2. **Each ad is reviewed manually to make sure it's legit.** The brand, the agency, the campaign name and the date all have to be confirmed in the source, and the link has to work.
+3. **An automatic [checker](scripts/validate.py) runs too.** It blocks missing facts, insecure links, two picks on one day, weekend picks, minor awards, and anything more than four weeks old.
+4. **Once approved, the week goes live.** Every installed copy of Spotted. picks it up from GitHub Pages, and falls back to the copy bundled inside if you're offline.
 
-## How a campaign gets picked
+The details are in [AUTOMATION.md](AUTOMATION.md).
 
-- **Fresh:** launched or covered in the last two to four weeks. Never older than four.
-- **Global, with a lean towards the UK, US and Europe.** Anything genuinely interesting from anywhere gets in.
-- **Fact-checked:** brand, agency, campaign name and date are all confirmed in the source article before it goes in. The source link has to work.
-- **Our words:** the two lines are written fresh. No copying article text.
-- **Award badge only for the big ones.** A yellow badge shows up only for a major award: a Grand Prix, Titanium, Gold, Silver or Bronze at Cannes Lions, a D&AD Pencil, a One Show Pencil, a Clio, an Effie or an IPA Effectiveness Award. Shortlists and finalists don't count. No major award, no badge. Most big shows run in the first half of the year, so plenty of great November work has no badge yet.
+## What makes the cut
+
+- **Fresh:** launched or first covered in the last few weeks. Never older than four.
+- **Throwbacks:** won a major creative or effectiveness award in the last year.
+- **Global, leaning UK, US and Europe.** Anything genuinely interesting from anywhere gets in.
+- **Agency or in-house, always named.** If no source says who made it, it doesn't go in. We never guess.
+- **Our words:** the two lines are written fresh, never copied from an article.
+- **Award badge only for the big ones:** a Grand Prix, Titanium, Gold, Silver or Bronze at Cannes Lions, a D&AD Pencil, a One Show Pencil, a Clio, an Effie or an IPA Effectiveness Award. Shortlists and finalists don't count.
 
 ## The Ad League (2K26 season)
 
-The popup only says *"How we score? I bet you'd like to know."* Here's the boring version:
+A cheeky league table of which agencies are actually winning all the shiny things. The popup only says *"How we score? I bet you'd like to know."* Here's the boring version.
 
-| What | Street cred |
+**Street cred depends on the level of the prize.** Some prizes are much bigger than others, so they're worth more:
+
+| Prize | Street cred |
 |---|---|
-| A top prize at a counted show (Cannes Lions Grand Prix or Titanium, D&AD Black Pencil) | **10** |
-| Being featured in Spotted. | **3** each time |
+| The very top: a Grand Prix or Titanium at Cannes Lions, a D&AD Black Pencil, a Grand Effie, an IPA Effectiveness Grand Prix | **10** |
+| A Gold, or a D&AD Yellow Pencil | **6** |
+| A Silver | **4** |
+| A Bronze | **2** |
+| Anything at a smaller show (The Drum Awards, Campaign Big Awards and the like) | **1** |
+| Being the Spotted ad of the day | **3** each time |
 
-- **Counted so far:** Cannes Lions 2026 and D&AD 2026.
-- **Not yet counted:** The One Show, Clios, Effies, Epica, IPA Effectiveness, Kantar Creative Effectiveness, LIA, ADC, Webbys and Eurobest (December). These get added as each show's results are tallied.
+**What it looks at:**
+- **Creative awards:** Cannes Lions, D&AD, The One Show, the Clios, ADC, Epica, LIA, Eurobest, Spikes Asia, Dubai Lynx and the Webbys.
+- **Effectiveness awards:** the IPA Effectiveness Awards, the Effies, Cannes Creative Effectiveness and Kantar Creative Effectiveness, with WARC for the data.
+- **Smaller national shows:** The Drum Awards, Campaign Big Awards, Creative Circle and similar.
+
+**Counted so far:** the top prizes at Cannes Lions 2026 and D&AD 2026. The other shows, and the lower prize levels, get added as their official results are tallied.
+
 - Credit goes to the lead agency named in the official results.
-- **No predicted or made-up wins, ever.** Every win in [`data/league.json`](data/league.json) is from the official 2026 results, cross-checked against [Creative Review's Cannes write-up](https://www.creativereview.co.uk/cannes-lions-2026-all-the-grand-prix-winners/) and [Adweek's D&AD write-up](https://www.adweek.com/creativity/these-are-the-4-black-pencil-winners-of-the-2026-dad-awards/).
+- **No predicted or made-up wins, ever.** Every win in [`data/league.json`](data/league.json) comes from official results, cross-checked against [Creative Review's Cannes write-up](https://www.creativereview.co.uk/cannes-lions-2026-all-the-grand-prix-winners/) and [Adweek's D&AD write-up](https://www.adweek.com/creativity/these-are-the-4-black-pencil-winners-of-the-2026-dad-awards/).
 - The joke is on the awards circus, not on anyone's work. For the grown-up version, see the [WARC Rankings](https://www.warc.com/en/data-benchmarks/rankings).
 
-## Where the picks come from
+## Also in the popup
 
-**Trade press:** The Drum, Adweek, Ad Age, Campaign, LBB (Little Black Book), Creative Review, Ads of the World, shots, Contagious, Muse by Clio, Marketing Week, Marketing Dive, B&T.
+**Guru says** (a checked quote from an ad legend, CMO or founder) and the **Archive** (every past pick, searchable).
 
-**Award shows:** Cannes Lions, D&AD, The One Show, Clio Awards, Effie Worldwide, Epica, Kantar Creative Effectiveness, IPA Effectiveness Awards, LIA, ADC, Webby Awards, Eurobest, Spikes Asia, Dubai Lynx, The Drum Awards, plus WARC for effectiveness data. (Interbrand is brand valuation rather than campaign awards, so it's context only.)
+## Worth following
 
-**Worth following** (they can't be pulled in automatically, but you should listen or follow anyway):
+Not pulled in automatically, but you should listen or follow anyway:
 - [Breaking & Entering Media](https://www.linkedin.com/company/breaking-entering-media/posts/) on LinkedIn
 - **Uncensored CMO** (podcast)
 - **HUNGRY.** with Dan Pope (podcast on challenger food and drink brands)
@@ -108,12 +124,13 @@ manifest.json        Chrome extension settings (Manifest V3)
 popup.html/.css/.js  The popup you see
 background.js        The midday nudge and the yellow dot
 lib/                 Shared code: loading data, dates, street cred maths
-data/                The picks, quotes and league table (this is what the daily job updates)
+data/                The picks, quotes and league table (this is what the weekly job updates)
 icons/               The gull, at Chrome's icon sizes
 scripts/validate.py  The data checker
-docs/                README images
+docs/                README cover, store screenshots and listing text
 DESIGN.md            Design decisions: name, look, voice, screens
-AUTOMATION.md        The plan for daily automatic picks
+AUTOMATION.md        The plan for the weekly picks
+PRIVACY.md           Privacy policy (it collects nothing)
 ```
 
 ## Built by
