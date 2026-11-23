@@ -59,6 +59,12 @@ flowchart LR
 > 8. If a pick fails and you can't fix it, swap it for another. If nothing passes for a day, leave that day empty.
 > 9. Open one pull request titled `Spotted: week of {Monday's date}`. In the description, list each day: brand, agency, campaign, source link, and one line on why you picked it. Don't merge it yourself. (Fully automatic later: commit straight to `main` instead and open the same list as an issue, so the owner still gets the email.)
 
+## The feed and the weekly email
+
+- [`scripts/build_feed.py`](scripts/build_feed.py) writes `feed.xml`, an RSS feed of every pick that has already run (never future ones).
+- A GitHub Action ([`.github/workflows/feed.yml`](.github/workflows/feed.yml)) rebuilds it just after midday on weekdays and whenever the picks change. It's served at https://georgepohl2-design.github.io/spotted-daily-ads/feed.xml.
+- An email tool with RSS-to-email (beehiiv, Kit, Mailchimp and others) can send a weekly round-up from it automatically. The tool holds subscribers' addresses, never this repo or the extension.
+
 ## Option B: a GitHub Action instead of a Claude routine
 
 If you'd rather not use a routine, a GitHub Action can run the same steps on a schedule by calling the Claude API.

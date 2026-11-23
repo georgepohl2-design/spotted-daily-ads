@@ -36,6 +36,8 @@ Plus:
 - **Don't poke the gull.** Hover over it and it glares at you. Click it and it squawks.
 - **Nothing stale.** A fresh pick is never shown more than four weeks after the campaign launched.
 
+**Prefer email or a feed reader?** Every pick that has run is in the [Spotted. feed](https://georgepohl2-design.github.io/spotted-daily-ads/feed.xml). A weekly email is coming soon.
+
 **No tracking, no accounts, no API keys** inside the extension. It reads a public list of picks and that's it.
 
 ## Install it (no coding needed, about 2 minutes)
@@ -116,6 +118,7 @@ lib/                 Shared code: loading data, dates, league table maths
 data/                The picks, quotes and league table (this is what the weekly job updates)
 icons/               The gull, at Chrome's icon sizes
 scripts/validate.py  The data checker
+scripts/build_feed.py Builds feed.xml, the RSS feed of picks that have run (for email and feed readers)
 docs/                README cover, store screenshots and listing text
 DESIGN.md            Design decisions: name, look, voice, screens
 AUTOMATION.md        The plan for the weekly picks

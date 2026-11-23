@@ -30,7 +30,9 @@ const isNew = (pick) => pick && pick.featureDate === todayISO() && !isWeekend(to
 async function refreshBadge(pick) {
   const seen = (await store.get('lastSeen')) === todayISO();
   if (isNew(pick) && !seen) {
-    await chrome.action.setBadgeBackgroundColor({ color: '#FAC775' });
+    // Chrome draws the badge small in the bottom-right corner of the icon.
+    await chrome.action.setBadgeBackgroundColor({ color: '#FFD500' });
+    if (chrome.action.setBadgeTextColor) await chrome.action.setBadgeTextColor({ color: '#FFD500' });
     await chrome.action.setBadgeText({ text: ' ' });
   } else {
     await chrome.action.setBadgeText({ text: '' });

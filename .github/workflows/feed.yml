@@ -1,0 +1,36 @@
+name: Update the feed
+
+# Rebuilds feed.xml (the RSS feed of picks that have run) just after midday on
+# weekdays, and whenever the picks change. Email tools send the weekly email from it.
+on:
+  schedule:
+    - cron: "1 12 * * 1-5"   # 12:01 UTC, just after the midday reveal (UK winter time)
+  push:
+    branches: [main]
+    paths: ["data/spotlights.json", "scripts/build_feed.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  feed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build feed.xml
+        run: python3 scripts/build_feed.py
+      - name: Save it if it changed
+        run: |
+          if [ -n "$(git status --porcelain feed.xml)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add feed.xml
+            git commit -m "Update feed"
+            git push
+          else
+            echo "No change"
+          fi
