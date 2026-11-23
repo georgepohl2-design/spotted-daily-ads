@@ -101,7 +101,7 @@ A cheeky league table of which agencies are winning all the shiny things. Nobody
 ## Worth following
 
 Not pulled in automatically, but you should listen or follow anyway:
-- [Breaking & Entering Media](https://www.linkedin.com/company/breaking-entering-media/posts/) on LinkedIn
+- [Breaking & Entering Media](https://www.linkedin.com/company/breaking-entering-media/posts/): fast, fun ad and marketing news on LinkedIn, YouTube, their [newsletter](https://breakingandentering.beehiiv.com) and podcast. One of our key sources.
 - **Uncensored CMO** (podcast)
 - **HUNGRY.** with Dan Pope (podcast on challenger food and drink brands)
 - **On Strategy Showcase** with Fergus O'Carroll (podcast: the strategy behind great campaigns)

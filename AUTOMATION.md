@@ -46,6 +46,8 @@ flowchart LR
 > You maintain the Spotted. Chrome extension in this repo. Add next week's five picks (Monday to Friday) to `data/spotlights.json`. Skip any day that already has a pick.
 >
 > 0. For each day: Monday, Wednesday and Friday are fresh picks (steps 1 to 6). Tuesday and Thursday are throwbacks: so find a major-award winner (Grand Prix, Gold, Silver, Bronze, Pencil, Effie, IPA Effectiveness) from the last 12 months that hasn't run yet, set `throwback: true`, fill in `award` with its `year`, and leave out `campaignDate`. Then skip to step 3.
+> **Key source: Breaking & Entering Media** (Geno Schellenberger and Jack Westerkamp). Check them first every week: their newsletter (breakingandentering.beehiiv.com), site (breaking-entering.com), YouTube (@BreakingandEnteringMedia), podcast, and LinkedIn (linkedin.com/company/breaking-entering-media), including their "Top 5 agencies of the week". Treat the work they cover as a strong signal, but still confirm brand, agency, campaign and date in the source itself.
+>
 > 1. Find campaigns launched or first covered in the last 14 days (never more than 28 days before the day it runs) on: The Drum, Adweek, Ad Age, Campaign, LBB, Creative Review, Ads of the World, shots, Contagious, Muse by Clio, Marketing Week, Marketing Dive, B&T. Favour UK, US and European work, but pick anything genuinely interesting from anywhere.
 > 2. Skip anything already in `data/spotlights.json`. Don't repeat a brand or agency used in the last 7 days.
 > 3. Open the source article and confirm: brand, lead agency, campaign name, and launch or coverage date. If any of these isn't stated in the source, pick something else. Never guess an agency.
