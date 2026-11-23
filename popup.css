@@ -54,8 +54,10 @@ button { font: inherit; color: inherit; }
 .mast { position: relative; }
 /* The gull: grows and glares on hover, squawks when poked. */
 .mast-gull { width: 34px; height: 34px; margin-left: -6px; cursor: pointer; position: relative; z-index: 5; overflow: visible;
-  transform-origin: 30% 70%; transition: transform .28s cubic-bezier(.3, 1.6, .5, 1); outline: none; }
-.mast-gull:hover, .mast-gull:focus-visible, .mast-gull.glare { transform: scale(1.7) translate(4px, 5px); }
+  transform-origin: 12% 55%; transition: transform .28s cubic-bezier(.3, 1.6, .5, 1); outline: none; }
+.mast-gull:hover, .mast-gull:focus-visible, .mast-gull.glare { transform: scale(2) translate(-1px, 6px); }
+#mast-title { display: inline-block; transition: transform .28s cubic-bezier(.3, 1.6, .5, 1); }
+.mast-gull:hover + #mast-title, .mast-gull:focus-visible + #mast-title, .mast-gull.glare + #mast-title { transform: translateX(34px); }
 #gull-head { transform-box: view-box; transform-origin: 164px 104px; transition: transform .28s ease; }
 .mast-gull:hover #gull-head, .mast-gull:focus-visible #gull-head, .mast-gull.glare #gull-head { transform: rotate(-16deg) translateX(-4px); }
 .gull-lid { opacity: 0; transition: opacity .2s; }
@@ -70,7 +72,7 @@ button { font: inherit; color: inherit; }
   60% { transform: rotate(-26deg) translateX(-5px); }
   80% { transform: rotate(-10deg) translateX(-3px); }
 }
-.gull-bubble { position: absolute; left: 52px; top: 46px; z-index: 6; margin: 0; max-width: 220px;
+.gull-bubble { position: absolute; left: 80px; top: 50px; z-index: 6; margin: 0; max-width: 220px;
   background: #fff; color: var(--ink); border: 2px solid var(--ink); border-radius: 10px;
   padding: 6px 10px; font-weight: 700; font-size: 13px; box-shadow: 3px 3px 0 var(--ink);
   animation: bubble-pop .18s cubic-bezier(.3, 1.6, .5, 1); }
@@ -90,7 +92,13 @@ button { font: inherit; color: inherit; }
   cursor: pointer;
   white-space: nowrap;
 }
+.tabs button { transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease; }
+.tabs button:hover { transform: scale(1.07); background: var(--red-light); border-color: var(--red); color: var(--red-dark); }
+.tabs button:active { transform: scale(.97); }
 .tabs button[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.tabs button[aria-selected="true"]:hover { background: #000; border-color: #000; color: #fff; }
+.btn, .link-button, .archive-list button { transition: transform .15s ease, background .15s ease; }
+.btn:hover { transform: scale(1.02); }
 .tabs button:focus-visible, .link-button:focus-visible, .btn:focus-visible, .search:focus-visible {
   outline: 2px solid var(--red); outline-offset: 2px;
 }
