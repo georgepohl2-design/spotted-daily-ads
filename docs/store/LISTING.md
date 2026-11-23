@@ -25,8 +25,8 @@ Every week:
 • Weekends off. Open it on a Saturday and the gull will tell you to go outside.
 
 Also inside:
-• Guru says: a quote from an ad legend, CMO or founder. Ogilvy, Hegarty, Cialdini, Jobs and friends. Every quote checked against a source.
-• The Ad League: who's winning all the shiny things. Silly, but we care.
+• Guru says: your daily dose of wisdom, one quote a day from an ad legend, CMO or founder. Ogilvy, Hegarty, Cialdini, Jobs and friends. Every quote checked against a source.
+• The Spotted League Table: which agencies are winning all the shiny things. Nobody cares. But we care.
 • Archive: every past pick, searchable by brand or agency.
 
 No accounts. No tracking. No ads. It reads a public list of picks and that's it.

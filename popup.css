@@ -51,7 +51,32 @@ button { font: inherit; color: inherit; }
   letter-spacing: 0.4px;
   color: #fff;
 }
-.mast-gull { width: 34px; height: 34px; margin-left: -6px; }
+.mast { position: relative; }
+/* The gull: grows and glares on hover, squawks when poked. */
+.mast-gull { width: 34px; height: 34px; margin-left: -6px; cursor: pointer; position: relative; z-index: 5; overflow: visible;
+  transform-origin: 30% 70%; transition: transform .28s cubic-bezier(.3, 1.6, .5, 1); outline: none; }
+.mast-gull:hover, .mast-gull:focus-visible, .mast-gull.glare { transform: scale(1.7) translate(4px, 5px); }
+#gull-head { transform-box: view-box; transform-origin: 164px 104px; transition: transform .28s ease; }
+.mast-gull:hover #gull-head, .mast-gull:focus-visible #gull-head, .mast-gull.glare #gull-head { transform: rotate(-16deg) translateX(-4px); }
+.gull-lid { opacity: 0; transition: opacity .2s; }
+.gull-brow { transform-box: view-box; transform-origin: 175px 76px; transition: transform .2s; }
+.mast-gull:hover .gull-lid, .mast-gull:focus-visible .gull-lid, .mast-gull.glare .gull-lid { opacity: 1; }
+.mast-gull:hover .gull-brow, .mast-gull:focus-visible .gull-brow, .mast-gull.glare .gull-brow { transform: rotate(14deg) translateY(2px); }
+.mast-gull.squawk #gull-head { animation: gull-shake .45s ease; }
+@keyframes gull-shake {
+  0%, 100% { transform: rotate(-16deg) translateX(-4px); }
+  20% { transform: rotate(-30deg) translateX(-6px); }
+  40% { transform: rotate(-4deg) translateX(-2px); }
+  60% { transform: rotate(-26deg) translateX(-5px); }
+  80% { transform: rotate(-10deg) translateX(-3px); }
+}
+.gull-bubble { position: absolute; left: 52px; top: 46px; z-index: 6; margin: 0; max-width: 220px;
+  background: #fff; color: var(--ink); border: 2px solid var(--ink); border-radius: 10px;
+  padding: 6px 10px; font-weight: 700; font-size: 13px; box-shadow: 3px 3px 0 var(--ink);
+  animation: bubble-pop .18s cubic-bezier(.3, 1.6, .5, 1); }
+.gull-bubble::before { content: ''; position: absolute; left: -9px; top: 6px; border: 8px solid transparent; border-right-color: var(--ink); border-left: 0; }
+@keyframes bubble-pop { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .mast-gull, #gull-head, .gull-brow, .gull-bubble { transition: none; animation: none; } }
 .mast-meta { font-size: 11px; color: var(--red-light); }
 
 /* Tabs */
@@ -128,7 +153,12 @@ main { padding: 12px 14px 4px; }
 .league-head { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); padding-bottom: 4px; border-bottom: 1px solid var(--line-soft); }
 .league-list { list-style: none; margin: 0; padding: 0; }
 .league-list li { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--line-soft); }
-.league-list li:first-child { font-weight: 600; }
+.league-list li.podium { font-weight: 600; padding: 7px 6px; margin: 2px 0; border-bottom: 0; border-radius: 4px; }
+.league-list li.podium-1 { background: #FAEEDA; }
+.league-list li.podium-2 { background: #F1EFE8; }
+.league-list li.podium-3 { background: #F3E6D8; }
+.league-list .podium-label { margin-left: 6px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+.daily-note { margin-top: 14px; }
 .league-list .rank { color: var(--muted); display: inline-block; min-width: 22px; }
 .league-list a { text-decoration: underline; }
 .league-list .cred { font-variant-numeric: tabular-nums; }

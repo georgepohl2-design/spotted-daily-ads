@@ -39,7 +39,7 @@ flowchart LR
 - **Your review:** the routine opens a pull request called `Spotted: week of {Monday's date}`, listing all five picks with their links. GitHub emails you. Press **Merge** if they're fine. If not, comment on the one to swap and Claude fixes it. Merge by Monday 11:00 so Monday's pick goes out at midday.
 - **If you don't get round to it:** nothing goes out that week until you merge. Once you switch to automatic, this stops being a risk.
 
-**Ad League updates:** once a month, or when a show announces results, the same routine adds new top prizes to `data/league.json`, using official results pages only. Next up: The One Show, Clios, Effies, Epica, IPA, Kantar, LIA, ADC, Webbys, then Eurobest in December.
+**Award reference list:** `data/league.json` → `wins` lists official 2026 top prizes. It is not scored (the league is scored only from Spotted ad picks), but it helps find throwbacks. Add to it from official results pages only.
 
 ## The routine prompt (draft)
 
@@ -52,6 +52,7 @@ flowchart LR
 > 4. Agency link: only add `agencyUrl` if you've loaded the agency's site and it's clearly theirs. Otherwise use `null`. Add the agency to `data/league.json` → `agencies` if it's new.
 > 5. Award: `null` unless the work has officially won a major award: Grand Prix, Titanium, Gold, Silver or Bronze at Cannes Lions, a D&AD Pencil, a One Show Pencil, a Clio, an Effie or an IPA Effectiveness Award. Shortlists and finalists don't count. Then use `{ "prize": "Gold", "show": "Cannes Lions 2026" }`, from the official results.
 > 6. Blurb: two short lines in our voice: chill, blunt, a bit can't-be-bothered, about why it's cool. Under 200 characters. Your own words, never article text. Joke about the awards circus or the idea, never about people or an agency's work. Example: "People want to steal KitKats. We get it. They made an ad about it. Fair."
+> 6b. Points: set `points` to 1. Use 2 or 3 only for something super special: a top Grand Prix or creative effectiveness winner, or work that's genuinely super dope and widely credited. Most weeks have at most one 3.
 > 7. Run `python3 scripts/validate.py --links`. Fix anything it flags.
 > 8. If a pick fails and you can't fix it, swap it for another. If nothing passes for a day, leave that day empty.
 > 9. Open one pull request titled `Spotted: week of {Monday's date}`. In the description, list each day: brand, agency, campaign, source link, and one line on why you picked it. Don't merge it yourself. (Fully automatic later: commit straight to `main` instead and open the same list as an issue, so the owner still gets the email.)

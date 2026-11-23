@@ -1,5 +1,5 @@
 import {
-  loadData, todayISO, niceDate, pastPicks, pickToday, issueNumber, streetCred, safeUrl, store, weekday,
+  loadData, todayISO, niceDate, pastPicks, pickToday, issueNumber, streetCred, safeUrl, store, weekday, daysBetween,
 } from './lib/data.js';
 
 const $ = (id) => document.getElementById(id);
@@ -9,7 +9,7 @@ const hasExt = typeof chrome !== 'undefined' && !!(chrome.runtime && chrome.runt
 const params = new URLSearchParams(location.search);
 const TODAY = /^\d{4}-\d{2}-\d{2}$/.test(params.get('date') || '') ? params.get('date') : todayISO();
 
-const TITLES = { spotlight: 'Spotted.', guru: 'Guru says', league: 'Ad League', archive: 'Archive' };
+const TITLES = { spotlight: 'Spotted.', guru: 'Guru says', league: 'Spotted League Table', archive: 'Archive' };
 
 let DATA = null;
 
@@ -44,7 +44,7 @@ function renderCard(s) {
   return el('article', { class: 'card' },
     el('p', { class: 'label' }, s.throwback ? `Throwback ${weekday(s.featureDate)}: still slaps` : 'Spotted ad:'),
     el('h2', { class: 'brand' }, s.brand),
-    el('p', { class: 'agency' }, el('span', { class: 'by' }, 'by '), link(`${s.agency}${safeUrl(s.agencyUrl) ? ' ↗' : ''}`, s.agencyUrl)),
+    el('p', { class: 'agency' }, el('span', { class: 'by' }, 'by '), s.agency),
     el('div', { class: 'card-row' },
       el('p', { class: 'row-label' }, 'Campaign'),
       el('p', { class: 'campaign' }, `“${s.campaign}”`),
@@ -100,15 +100,13 @@ function renderSpotlight() {
 }
 
 /* ---------- Guru says ---------- */
-async function renderGuru() {
+// One quote a day: everyone gets the same one, and it changes at midnight.
+function renderGuru() {
   const quotes = DATA.quotes.quotes;
   if (!quotes.length) return;
-  const last = await store.get('lastQuote');
-  let i = Math.floor(Math.random() * quotes.length);
-  if (quotes.length > 1 && i === last) i = (i + 1) % quotes.length;
+  let i = ((daysBetween('2026-01-01', TODAY) % quotes.length) + quotes.length) % quotes.length;
   const forced = Number(params.get('quote')); // for screenshots: ?quote=3
   if (params.has('quote') && quotes[forced]) i = forced;
-  await store.set('lastQuote', i);
   const q = quotes[i];
   $('quote-text').textContent = `“${q.text}”`;
   const a = $('quote-person');
@@ -117,28 +115,30 @@ async function renderGuru() {
   if (href) a.href = href; else a.removeAttribute('href');
 }
 
-/* ---------- Ad League ---------- */
+/* ---------- Spotted League Table ---------- */
+// Agencies only (in-house brand teams are left out). Top three get a prize.
+const PODIUM = { 1: ['🏆', 'Winner'], 2: ['🥈', 'Second'], 3: ['🥄', 'Wooden spoon'] };
 let showAll = false;
 function renderLeague() {
   const rows = streetCred(DATA.league, DATA.spotlights.spotlights, TODAY);
   const list = $('league-list');
   const shown = showAll ? rows : rows.slice(0, 10);
-  let rank = 0; let prev = null;
   list.replaceChildren(...shown.map((r, idx) => {
-    if (r.cred !== prev) { rank = idx + 1; prev = r.cred; }
-    const why = [
-      r.prizes ? `${r.prizes} award${r.prizes > 1 ? 's' : ''}` : null,
-      r.features ? `spotted ${r.features}×` : null,
-    ].filter(Boolean).join(', ');
-    return el('li', { title: why },
-      el('span', {}, el('span', { class: 'rank' }, `${rank}.`), link(`${r.name}${safeUrl(r.url) ? ' ↗' : ''}`, r.url)),
+    const rank = idx + 1;
+    const why = [r.prizes ? `${r.prizes} top prize${r.prizes > 1 ? 's' : ''}` : null, r.features ? `spotted ${r.features}×` : null].filter(Boolean).join(', ');
+    const medal = PODIUM[rank];
+    return el('li', { title: why, class: medal ? `podium podium-${rank}` : null },
+      el('span', {},
+        el('span', { class: 'rank' }, medal ? medal[0] : `${rank}.`),
+        r.name,
+        medal ? el('span', { class: 'podium-label' }, medal[1]) : null),
       el('span', { class: 'cred' }, r.cred),
     );
   }));
   const more = $('league-more');
   more.hidden = rows.length <= 10;
   more.textContent = showAll ? 'Just the top 10' : `See the rest (${rows.length - 10} more)`;
-  $('league-shows').textContent = `Counted so far: ${DATA.league.showsCounted.join(', ')}. More shows coming.`;
+  $('league-shows').textContent = `Starting points from: ${DATA.league.showsCounted.join(', ')}. Updated every weekday.`;
 }
 
 /* ---------- Archive ---------- */
@@ -170,6 +170,52 @@ function closeArchiveItem() {
   $('archive-list-view').hidden = false;
 }
 
+/* ---------- The gull ---------- */
+// Hover: it grows and glares. Click: it squawks and tells you off.
+const GULL_LINES = [
+  'What do you want?', 'Do I look like I\'m working?', 'Stop poking me.', 'Oi. Hands off.',
+  'I\'m on my break.', 'Go and read the ad.', 'That\'s my good side. Rude.', 'Squawk. Happy now?',
+  'I bite, you know.', 'Have you got chips?',
+];
+const WEEKEND_LINES = ['It\'s the weekend. Leave me alone.', 'Not today, mate.', 'Go outside. Seriously.'];
+let gullLast = -1; let bubbleTimer = null;
+function squawk() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const t = ctx.currentTime;
+    [0, 0.17].forEach((delay, n) => {
+      const osc = ctx.createOscillator();
+      const filter = ctx.createBiquadFilter();
+      const gain = ctx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(1700 - n * 250, t + delay);
+      osc.frequency.exponentialRampToValueAtTime(650, t + delay + 0.14);
+      filter.type = 'bandpass'; filter.frequency.value = 1400; filter.Q.value = 1.2;
+      gain.gain.setValueAtTime(0.0001, t + delay);
+      gain.gain.exponentialRampToValueAtTime(0.25, t + delay + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + delay + 0.15);
+      osc.connect(filter).connect(gain).connect(ctx.destination);
+      osc.start(t + delay); osc.stop(t + delay + 0.16);
+    });
+    setTimeout(() => ctx.close(), 700);
+  } catch (_) { /* no sound, no drama */ }
+}
+function pokeGull() {
+  const gull = $('gull');
+  const lines = ['Saturday', 'Sunday'].includes(weekday(TODAY)) ? WEEKEND_LINES : GULL_LINES;
+  let i = Math.floor(Math.random() * lines.length);
+  if (lines.length > 1 && i === gullLast) i = (i + 1) % lines.length;
+  gullLast = i;
+  squawk();
+  gull.classList.remove('squawk'); void gull.getBoundingClientRect(); gull.classList.add('squawk');
+  const bubble = $('gull-bubble');
+  bubble.textContent = lines[i];
+  bubble.hidden = false;
+  gull.classList.add('glare'); // keeps glaring while it talks
+  clearTimeout(bubbleTimer);
+  bubbleTimer = setTimeout(() => { bubble.hidden = true; gull.classList.remove('glare'); }, 2200);
+}
+
 /* ---------- Tabs ---------- */
 function showTab(name) {
   for (const b of document.querySelectorAll('.tabs button')) {
@@ -178,19 +224,21 @@ function showTab(name) {
   for (const key of Object.keys(TITLES)) $('tab-' + key).hidden = key !== name;
   $('mast-title').textContent = TITLES[name];
   $('mast-meta').textContent = name === 'spotlight' ? ($('mast-meta').dataset.spotlight || '') : name === 'league' ? '2K26 season' : '';
-  if (name === 'guru') renderGuru();
   if (name === 'archive') closeArchiveItem();
 }
 
 /* ---------- Start ---------- */
 async function start() {
   for (const b of document.querySelectorAll('.tabs button')) b.addEventListener('click', () => showTab(b.dataset.tab));
+  $('gull').addEventListener('click', pokeGull);
+  $('gull').addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pokeGull(); } });
   $('archive-search').addEventListener('input', renderArchive);
   $('archive-back').addEventListener('click', closeArchiveItem);
   $('league-more').addEventListener('click', () => { showAll = !showAll; renderLeague(); });
 
   DATA = await loadData();
   renderSpotlight();
+  renderGuru();
   renderLeague();
   renderArchive();
   const startTab = params.get('tab');

@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-22",
-  "rules": "One pick per weekday, none at weekends. Tuesdays and Thursdays are throwbacks (from 23 Nov 2026): major-award winners from the last year, marked throwback: true. Every other pick is fresh: shown only while it's 28 days old or less. campaignDate = launch or first trade coverage. Blurbs are written in our own words. award is null unless the work officially won a major award.",
+  "rules": "One pick per weekday, none at weekends. Tuesdays and Thursdays are throwbacks (from 23 Nov 2026): major-award winners from the last year, marked throwback: true. Every other pick is fresh: shown only while it's 28 days old or less. campaignDate = launch or first trade coverage. Blurbs are written in our own words. award is null unless the work officially won a major award. points: what the pick scores the agency in the Spotted League Table. 1 normally; 2 or 3 for something super special (a top Grand Prix or creative effectiveness win, or work that's genuinely super dope and widely credited).",
   "spotlights": [
     {
       "featureDate": "2026-11-02",
@@ -21,7 +21,8 @@
         "uk",
         "retail",
         "comedy"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-03",
@@ -42,7 +43,8 @@
         "uk",
         "retail",
         "film"
-      ]
+      ],
+      "points": 2
     },
     {
       "featureDate": "2026-11-05",
@@ -63,7 +65,8 @@
         "toys",
         "in-house",
         "music"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-06",
@@ -84,7 +87,8 @@
         "uk",
         "football",
         "sport"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-09",
@@ -106,7 +110,8 @@
         "fashion",
         "music",
         "sport"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-10",
@@ -127,7 +132,8 @@
         "uk",
         "retail",
         "comedy"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-11",
@@ -148,7 +154,8 @@
         "uk",
         "charity",
         "film"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-12",
@@ -169,7 +176,8 @@
         "global",
         "entertainment",
         "film"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-13",
@@ -190,7 +198,8 @@
         "us",
         "tech",
         "comedy"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-16",
@@ -211,7 +220,8 @@
         "uk",
         "food",
         "comedy"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-17",
@@ -232,7 +242,8 @@
         "us",
         "entertainment",
         "comedy"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-18",
@@ -254,7 +265,8 @@
         "global",
         "tech",
         "film"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-19",
@@ -275,7 +287,8 @@
         "uk",
         "retail",
         "toys"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-20",
@@ -296,7 +309,8 @@
         "us",
         "global",
         "drinks"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-23",
@@ -316,7 +330,8 @@
         "christmas",
         "uk",
         "retail"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-24",
@@ -339,7 +354,8 @@
         "pr",
         "food"
       ],
-      "throwback": true
+      "throwback": true,
+      "points": 3
     },
     {
       "featureDate": "2026-11-25",
@@ -359,7 +375,8 @@
         "christmas",
         "uk",
         "retail"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-11-26",
@@ -383,7 +400,8 @@
         "documentary",
         "ireland"
       ],
-      "throwback": true
+      "throwback": true,
+      "points": 3
     },
     {
       "featureDate": "2026-11-27",
@@ -403,7 +421,8 @@
         "uk",
         "finance",
         "fraud"
-      ]
+      ],
+      "points": 2
     },
     {
       "featureDate": "2026-11-30",
@@ -424,7 +443,8 @@
         "uk",
         "retail",
         "comedy"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-12-01",
@@ -448,7 +468,8 @@
         "retail",
         "effectiveness"
       ],
-      "throwback": true
+      "throwback": true,
+      "points": 3
     },
     {
       "featureDate": "2026-12-02",
@@ -468,7 +489,8 @@
         "christmas",
         "uk",
         "retail"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-12-03",
@@ -491,7 +513,8 @@
         "beauty",
         "health"
       ],
-      "throwback": true
+      "throwback": true,
+      "points": 3
     },
     {
       "featureDate": "2026-12-04",
@@ -512,7 +535,8 @@
         "cars",
         "comedy",
         "celebrity"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-12-07",
@@ -532,7 +556,8 @@
         "drinks",
         "celebrity",
         "film"
-      ]
+      ],
+      "points": 2
     },
     {
       "featureDate": "2026-12-09",
@@ -553,7 +578,8 @@
         "pets",
         "memes",
         "comedy"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-12-11",
@@ -575,7 +601,8 @@
         "canada",
         "food",
         "nostalgia"
-      ]
+      ],
+      "points": 1
     },
     {
       "featureDate": "2026-12-14",
@@ -595,7 +622,8 @@
         "ireland",
         "charity",
         "animals"
-      ]
+      ],
+      "points": 1
     }
   ],
   "throwbacksFrom": "2026-11-23"

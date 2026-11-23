@@ -8,14 +8,43 @@
 </head>
 <body>
   <header class="mast">
-    <h1 class="mast-title"><img src="icons/icon48.png" alt="" class="mast-gull"><span id="mast-title">Spotted.</span></h1>
+    <h1 class="mast-title"><svg id="gull" class="mast-gull" viewBox="0 0 260 260" role="button" tabindex="0" aria-label="Poke the gull">
+      <g transform="translate(14,14)">
+        <polygon points="42,150 12,170 32,178" fill="#5F5E5A" stroke="#2C2C2A" stroke-width="3"/>
+        <line x1="88" y1="176" x2="88" y2="222" stroke="#EF9F27" stroke-width="7"/>
+        <line x1="110" y1="176" x2="110" y2="222" stroke="#EF9F27" stroke-width="7"/>
+        <line x1="78" y1="222" x2="96" y2="222" stroke="#EF9F27" stroke-width="7" stroke-linecap="round"/>
+        <line x1="100" y1="222" x2="118" y2="222" stroke="#EF9F27" stroke-width="7" stroke-linecap="round"/>
+        <ellipse cx="95" cy="140" rx="55" ry="42" transform="rotate(-25 95 140)" fill="#2C2C2A" stroke="#2C2C2A" stroke-width="8"/>
+        <ellipse cx="140" cy="102" rx="20" ry="24" fill="#2C2C2A" stroke="#2C2C2A" stroke-width="8"/>
+        <ellipse cx="95" cy="140" rx="55" ry="42" transform="rotate(-25 95 140)" fill="#FFFFFF"/>
+        <ellipse cx="140" cy="102" rx="20" ry="24" fill="#FFFFFF"/>
+        <path d="M52 150 Q85 108 132 122 Q108 160 52 150Z" fill="#888780" stroke="#2C2C2A" stroke-width="3"/>
+        <path d="M52 150 Q60 140 70 136 L64 156 Z" fill="#2C2C2A"/>
+        <g id="gull-head">
+          <circle cx="150" cy="78" r="30" fill="#2C2C2A" stroke="#2C2C2A" stroke-width="8"/>
+          <circle cx="150" cy="78" r="30" fill="#FFFFFF"/>
+          <polygon points="176,70 216,81 176,91" fill="#EF9F27" stroke="#854F0B" stroke-width="2"/>
+          <circle cx="200" cy="85" r="3.5" fill="#E24B4A"/>
+          <circle cx="161" cy="71" r="6.5" fill="#2C2C2A"/>
+          <circle cx="163" cy="69" r="1.8" fill="#FFFFFF"/>
+          <path class="gull-lid" d="M152.5 72 A8.5 8.5 0 0 1 169.5 72 Z" fill="#FFFFFF" stroke="#2C2C2A" stroke-width="3"/>
+          <line class="gull-brow" x1="151" y1="59" x2="171" y2="62.5" stroke="#2C2C2A" stroke-width="4.5" stroke-linecap="round"/>
+          <g transform="rotate(-8 150 50)">
+            <rect x="130" y="4" width="40" height="46" rx="3" fill="#2C2C2A"/>
+            <ellipse cx="150" cy="51" rx="32" ry="6.5" fill="#2C2C2A"/>
+          </g>
+        </g>
+      </g>
+    </svg><span id="mast-title">Spotted.</span></h1>
+    <p id="gull-bubble" class="gull-bubble" role="status" hidden></p>
     <span id="mast-meta" class="mast-meta"></span>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Sections">
     <button role="tab" data-tab="spotlight" aria-selected="true">Spotted ad</button>
     <button role="tab" data-tab="guru" aria-selected="false">Guru says</button>
-    <button role="tab" data-tab="league" aria-selected="false">Ad League</button>
+    <button role="tab" data-tab="league" aria-selected="false">League</button>
     <button role="tab" data-tab="archive" aria-selected="false">Archive</button>
   </nav>
 
@@ -25,15 +54,18 @@
     <section id="tab-guru" role="tabpanel" hidden>
       <blockquote id="quote-text" class="quote"></blockquote>
       <a id="quote-person" class="quote-person" target="_blank" rel="noopener"></a>
+      <p class="muted small daily-note">Your daily dose of wisdom. A new one tomorrow.</p>
     </section>
 
     <section id="tab-league" role="tabpanel" hidden>
-      <p class="kicker-line">Who's winning all the shiny things. Silly, but we care.</p>
+      <p class="kicker-line">Which agencies are winning all the shiny things in 2026? Nobody cares. But we care.</p>
       <div class="league-head"><span>Agency</span><span>Street cred</span></div>
       <ol id="league-list" class="league-list"></ol>
       <button id="league-more" class="link-button" hidden>See the rest</button>
-      <p class="score-q">How we score?</p>
-      <p class="score-a">I bet you'd like to know. Awards actually won, plus work we reckon is dope.</p>
+      <p class="score-q">How it's scored</p>
+      <p class="score-a">Agencies score when their work is the Spotted ad. We search for it everywhere: work that's won awards, work people are talking about, and work that gets the credit.</p>
+      <p class="score-a">One point each time they're spotted. If it's super special, we might give it 2 or 3. Ties go to whoever was spotted most recently.</p>
+      <p class="score-a">We've only just started, so the tally has only just begun. To kick things off, every agency gets 3 points for each of 2026's top prizes in creativity and effectiveness.</p>
       <p id="league-shows" class="muted small"></p>
     </section>
 

@@ -2,24 +2,14 @@
   "year": 2026,
   "rules": "Top prizes only, officially awarded in 2026. Each one = 10 street cred. Each time an agency's work is featured in Spotted = 3 street cred (counted automatically from spotlights.json, only once the feature date has passed). Credit goes to the lead agency as named in the official results.",
   "points": {
-    "topPrize": 10,
-    "prizes": {
-      "grand prix": 10,
-      "titanium": 10,
-      "black pencil": 10,
-      "grand effie": 10,
-      "gold": 6,
-      "yellow pencil": 6,
-      "silver": 4,
-      "bronze": 2
-    },
-    "smallShow": 1,
-    "spottedFeature": 3,
-    "_note": "Street cred depends on the level of the prize: 10 for the biggest (Grand Prix, Titanium, Black Pencil, Grand Effie), down to 2 for a Bronze. Any prize at a smaller show counts 1. Each Spotted. feature adds 3."
+    "startingPrize": 3,
+    "_note": "The tally has only just begun, so every agency gets 3 starting points for each 2026 top prize in 'wins' (Cannes Lions Grand Prix and Titanium, D&AD Black Pencils, the IPA Effectiveness Grand Prix, the UK Grand Effie). After that, the Spotted League Table is scored from Spotted ad picks: each pick gives its agency the pick's 'points' (1 normally, 2 or 3 for something super special). In-house brand teams are left out."
   },
   "showsCounted": [
     "Cannes Lions 2026",
-    "D&AD 2026"
+    "D&AD 2026",
+    "IPA Effectiveness Awards 2026",
+    "Effie Awards UK 2026"
   ],
   "showsNotYet": [
     "The One Show",
@@ -80,7 +70,8 @@
     },
     "google": {
       "name": "Google (in-house)",
-      "url": null
+      "url": null,
+      "inHouse": true
     },
     "lola": {
       "name": "Lola",
@@ -168,7 +159,8 @@
     },
     "arsenal-creative-studio": {
       "name": "Arsenal Creative Studio",
-      "url": "https://www.arsenal.com/"
+      "url": "https://www.arsenal.com/",
+      "inHouse": true
     },
     "happy-hour": {
       "name": "Happy Hour",
@@ -224,7 +216,8 @@
     },
     "our-lego-agency": {
       "name": "Our LEGO Agency",
-      "url": null
+      "url": null,
+      "inHouse": true
     },
     "ma-plus-group": {
       "name": "MA+ Group",
@@ -236,6 +229,10 @@
     },
     "amv-bbdo": {
       "name": "AMV BBDO",
+      "url": null
+    },
+    "mindshare": {
+      "name": "Mindshare",
       "url": null
     }
   },
@@ -536,6 +533,24 @@
       "category": "Impact",
       "brand": "AXA",
       "work": "Three Words"
+    },
+    {
+      "agencyKey": "amv-bbdo",
+      "show": "IPA Effectiveness Awards 2026",
+      "prize": "Grand Prix",
+      "category": "Effectiveness",
+      "brand": "Currys",
+      "work": "The Superpower In-store",
+      "source": "https://ipa.co.uk/news/effectiveness-awards-grand-prix/"
+    },
+    {
+      "agencyKey": "mindshare",
+      "show": "Effie Awards UK 2026",
+      "prize": "Grand Effie",
+      "category": "Effectiveness",
+      "brand": "M&S Food",
+      "work": "Farm to Foodhall",
+      "source": "https://lbbonline.com/news/m-s-food-mindshare-grand-effie-2026-effie-awards-uk"
     }
   ],
   "sources": {
@@ -555,5 +570,6 @@
     "Shark Awards",
     "Kinsale Sharks",
     "Roses Creative Awards"
-  ]
+  ],
+  "seasonStart": "2026-11-02"
 }

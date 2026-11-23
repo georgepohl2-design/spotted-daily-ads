@@ -33,6 +33,7 @@ Click the seagull in your Chrome toolbar and you get the day's ad:
 Plus:
 - **A yellow dot** on the icon when there's a new ad you haven't seen.
 - **A midday ping:** a notification at 12:00 on weekdays, like "Tesco by BBH London".
+- **Don't poke the gull.** Hover over it and it glares at you. Click it and it squawks.
 - **Nothing stale.** A fresh pick is never shown more than four weeks after the campaign launched.
 
 **No tracking, no accounts, no API keys** inside the extension. It reads a public list of picks and that's it.
@@ -79,35 +80,23 @@ The details are in [AUTOMATION.md](AUTOMATION.md).
 - **Our words:** the two lines are written fresh, never copied from an article.
 - **Award badge only for the big ones:** a Grand Prix, Titanium, Gold, Silver or Bronze at Cannes Lions, a D&AD Pencil, a One Show Pencil, a Clio, an Effie or an IPA Effectiveness Award. Shortlists and finalists don't count.
 
-## The Ad League (2K26 season)
+## The Spotted League Table (2K26 season)
 
-A cheeky league table of which agencies are actually winning all the shiny things. The popup only says *"How we score? I bet you'd like to know."* Here's the boring version.
+A cheeky league table of which agencies are winning all the shiny things. Nobody cares. But we care. First place gets a trophy, second a medal, third the wooden spoon.
 
-**Street cred depends on the level of the prize.** Some prizes are much bigger than others, so they're worth more:
-
-| Prize | Street cred |
-|---|---|
-| The very top: a Grand Prix or Titanium at Cannes Lions, a D&AD Black Pencil, a Grand Effie, an IPA Effectiveness Grand Prix | **10** |
-| A Gold, or a D&AD Yellow Pencil | **6** |
-| A Silver | **4** |
-| A Bronze | **2** |
-| Anything at a smaller show (The Drum Awards, Campaign Big Awards and the like) | **1** |
-| Being the Spotted ad of the day | **3** each time |
-
-**What it looks at:**
-- **Creative awards:** Cannes Lions, D&AD, The One Show, the Clios, ADC, Epica, LIA, Eurobest, Spikes Asia, Dubai Lynx and the Webbys.
-- **Effectiveness awards:** the IPA Effectiveness Awards, the Effies, Cannes Creative Effectiveness and Kantar Creative Effectiveness, with WARC for the data.
-- **Smaller national shows:** The Drum Awards, Campaign Big Awards, Creative Circle and similar.
-
-**Counted so far:** the top prizes at Cannes Lions 2026 and D&AD 2026. The other shows, and the lower prize levels, get added as their official results are tallied.
-
-- Credit goes to the lead agency named in the official results.
-- **No predicted or made-up wins, ever.** Every win in [`data/league.json`](data/league.json) comes from official results, cross-checked against [Creative Review's Cannes write-up](https://www.creativereview.co.uk/cannes-lions-2026-all-the-grand-prix-winners/) and [Adweek's D&AD write-up](https://www.adweek.com/creativity/these-are-the-4-black-pencil-winners-of-the-2026-dad-awards/).
-- The joke is on the awards circus, not on anyone's work. For the grown-up version, see the [WARC Rankings](https://www.warc.com/en/data-benchmarks/rankings).
+**How it's scored:**
+- **It's scored off the Spotted ad.** Agencies score when their work is picked.
+- **We search for it everywhere:** work that's won awards, work people are talking about, and work that gets the credit.
+- **One point each time an agency is spotted.** If the work is super special, it can get 2 or 3.
+- **Ties go to whoever was spotted most recently.**
+- **The tally has only just begun.** To kick things off, every agency starts with 3 points for each of 2026's top prizes: the Cannes Lions Grands Prix (including Creative Effectiveness), D&AD Black Pencils, the IPA Effectiveness Grand Prix and the UK Grand Effie. Every win is from official results.
+- **Agencies only.** In-house brand teams are left out.
+- **Credit goes to the agency or office named in the source**, so De La Cruz Ogilvy (Puerto Rico) counts separately from other Ogilvy offices.
+- The season started on 2 November 2026. The joke is on the awards circus, not on anyone's work.
 
 ## Also in the popup
 
-**Guru says** (a checked quote from an ad legend, CMO or founder) and the **Archive** (every past pick, searchable).
+**Guru says** (your daily dose of wisdom: one checked quote a day from an ad legend, CMO or founder) and the **Archive** (every past pick, searchable).
 
 ## Worth following
 
@@ -123,7 +112,7 @@ Not pulled in automatically, but you should listen or follow anyway:
 manifest.json        Chrome extension settings (Manifest V3)
 popup.html/.css/.js  The popup you see
 background.js        The midday nudge and the yellow dot
-lib/                 Shared code: loading data, dates, street cred maths
+lib/                 Shared code: loading data, dates, league table maths
 data/                The picks, quotes and league table (this is what the weekly job updates)
 icons/               The gull, at Chrome's icon sizes
 scripts/validate.py  The data checker

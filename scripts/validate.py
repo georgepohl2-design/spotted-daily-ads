@@ -102,6 +102,8 @@ for i, s in enumerate(spots["spotlights"]):
         err(f"{where}: blurb is over 200 characters, keep it blunt")
     if s.get("agencyKey") and s["agencyKey"] not in league["agencies"]:
         err(f"{where}: agencyKey '{s['agencyKey']}' isn't listed in league.json agencies")
+    if "points" in s and s["points"] not in (1, 2, 3):
+        err(f"{where}: points must be 1, 2 or 3 (got {s['points']!r})")
     aw = s.get("award")
     if aw:
         show, prize = aw.get("show", ""), aw.get("prize", "")
