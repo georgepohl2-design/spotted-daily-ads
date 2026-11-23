@@ -75,6 +75,7 @@ The details are in [AUTOMATION.md](AUTOMATION.md).
 
 ## What makes the cut
 
+- **The whole idea, not just ads:** films, stunts, brand activations, out-of-home, brand collabs and gaming collabs in Roblox, Fortnite and the like.
 - **Fresh:** launched or first covered in the last few weeks. Never older than four.
 - **Throwbacks:** won a major creative or effectiveness award in the last year.
 - **Global, leaning UK, US and Europe.** Anything genuinely interesting from anywhere gets in.

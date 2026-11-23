@@ -42,7 +42,8 @@ function stickerText(award) {
 
 function renderCard(s) {
   return el('article', { class: 'card' },
-    el('p', { class: 'label' }, s.throwback ? `Throwback ${weekday(s.featureDate)}: still slaps` : 'Spotted ad:'),
+    el('p', { class: 'label' }, s.throwback ? `Throwback ${weekday(s.featureDate)}: still slaps` : `Spotted ${s.format || 'ad'}:`),
+    s.throwback && s.format && s.format !== 'ad' ? el('span', { class: 'format-tag' }, s.format) : null,
     el('h2', { class: 'brand' }, s.brand),
     el('p', { class: 'agency' }, el('span', { class: 'by' }, 'by '), s.agency),
     el('div', { class: 'card-row' },
@@ -54,7 +55,7 @@ function renderCard(s) {
       el('p', { class: 'row-label' }, "Why it's good"),
       el('p', { class: 'blurb' }, s.blurb),
     ),
-    link(`Read more on ${s.source.name} ↗`, s.source.url, 'btn'),
+    link(`${s.source.video ? 'Watch it on' : 'Read more on'} ${s.source.name} ↗`, s.source.url, 'btn'),
     s.throwback
       ? el('p', { class: 'released' }, 'Not new. Won stuff. Deal with it.')
       : el('p', { class: 'released' }, `Released ${niceDate(s.campaignDate, true)}`),

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-22",
-  "rules": "One pick per weekday, none at weekends. Tuesdays and Thursdays are throwbacks (from 23 Nov 2026): major-award winners from the last year, marked throwback: true. Every other pick is fresh: shown only while it's 28 days old or less. campaignDate = launch or first trade coverage. Blurbs are written in our own words. award is null unless the work officially won a major award. points: what the pick scores the agency in the Spotted League Table. 1 normally; 2 or 3 for something super special (a top Grand Prix or creative effectiveness win, or work that's genuinely super dope and widely credited).",
+  "updated": "2026-11-23",
+  "rules": "One pick per weekday, none at weekends. Tuesdays and Thursdays are throwbacks (from 23 Nov 2026): major-award winners from the last year, marked throwback: true. Every other pick is fresh: shown only while it's 28 days old or less. campaignDate = launch or first trade coverage. Blurbs are written in our own words. format: what kind of idea it is (ad, stunt, activation, gaming collab, brand collab, out of home); leave it out for a normal ad. source.video: true when the link is the work itself on YouTube or similar, so the button says Watch. award is null unless the work officially won a major award. points: what the pick scores the agency in the Spotted League Table. 1 normally; 2 or 3 for something super special (a top Grand Prix or creative effectiveness win, or work that's genuinely super dope and widely credited).",
   "spotlights": [
     {
       "featureDate": "2026-11-02",
@@ -340,6 +340,7 @@
       "agencyKey": "burson",
       "agencyUrl": null,
       "campaign": "The KitKat Heist",
+      "format": "stunt",
       "award": {
         "show": "Cannes Lions 2026",
         "prize": "Grand Prix, PR",

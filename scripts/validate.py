@@ -21,6 +21,8 @@ MAX_AGE_DAYS = 28
 # The award badge only shows for major awards. Shortlists, merits and finalists don't count.
 MAJOR_SHOWS = ["Cannes Lions", "D&AD", "The One Show", "Clio", "Effie", "IPA Effectiveness", "Eurobest", "Epica", "LIA"]
 MAJOR_PRIZES = ["grand prix", "titanium", "gold", "silver", "bronze", "pencil", "grand effie", "grand clio", "best of show"]
+# What kind of idea it is. Not just ads: stunts, activations and gaming collabs count too.
+FORMATS = ["ad", "stunt", "activation", "gaming collab", "brand collab", "out of home"]
 REQUIRED = ["featureDate", "brand", "agency", "agencyKey", "campaign", "blurb", "source"]
 errors = []
 
@@ -102,6 +104,8 @@ for i, s in enumerate(spots["spotlights"]):
         err(f"{where}: blurb is over 200 characters, keep it blunt")
     if s.get("agencyKey") and s["agencyKey"] not in league["agencies"]:
         err(f"{where}: agencyKey '{s['agencyKey']}' isn't listed in league.json agencies")
+    if s.get("format") and s["format"] not in FORMATS:
+        err(f"{where}: format must be one of {', '.join(FORMATS)} (got {s['format']!r})")
     if "points" in s and s["points"] not in (1, 2, 3):
         err(f"{where}: points must be 1, 2 or 3 (got {s['points']!r})")
     aw = s.get("award")
