@@ -117,7 +117,7 @@ function renderGuru() {
 
 /* ---------- Spotted League Table ---------- */
 // Agencies only (in-house brand teams are left out). Top three get a prize.
-const PODIUM = { 1: ['🏆', 'Winner'], 2: ['🥈', 'Second'], 3: ['🥄', 'Wooden spoon'] };
+const PODIUM = { 1: ['🏆', 'King of all agencies'], 2: ['🥈', 'First loser'], 3: ['🥄', 'Wooden spoon'] };
 let showAll = false;
 function renderLeague() {
   const rows = streetCred(DATA.league, DATA.spotlights.spotlights, TODAY);
@@ -128,10 +128,9 @@ function renderLeague() {
     const why = [r.prizes ? `${r.prizes} top prize${r.prizes > 1 ? 's' : ''}` : null, r.features ? `spotted ${r.features}×` : null].filter(Boolean).join(', ');
     const medal = PODIUM[rank];
     return el('li', { title: why, class: medal ? `podium podium-${rank}` : null },
-      el('span', {},
+      el('span', { class: 'who-row' },
         el('span', { class: 'rank' }, medal ? medal[0] : `${rank}.`),
-        r.name,
-        medal ? el('span', { class: 'podium-label' }, medal[1]) : null),
+        el('span', { class: 'who' }, r.name, medal ? el('span', { class: 'podium-label' }, medal[1]) : null)),
       el('span', { class: 'cred' }, r.cred),
     );
   }));

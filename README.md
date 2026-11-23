@@ -82,7 +82,7 @@ The details are in [AUTOMATION.md](AUTOMATION.md).
 
 ## The Spotted League Table (2K26 season)
 
-A cheeky league table of which agencies are winning all the shiny things. Nobody cares. But we care. First place gets a trophy, second a medal, third the wooden spoon.
+A cheeky league table of which agencies are winning all the shiny things. Nobody cares. But we care. First place is crowned King of all agencies, second is the First loser, and third gets the wooden spoon.
 
 **How it's scored:**
 - **It's scored off the Spotted ad.** Agencies score when their work is picked.
