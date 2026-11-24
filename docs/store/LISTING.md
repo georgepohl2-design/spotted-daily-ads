@@ -7,6 +7,7 @@
 - **Category:** Fun (or the closest match the dashboard offers, e.g. Lifestyle)
 - **Language:** English (UK)
 - **Store icon:** `icons/icon128.png`
+- **Small promo tile** (440x280): `docs/store/promo-tile.png` (made from `promo.html`)
 - **Screenshots** (1280x800, in this order): `docs/store/1-today.png`, `2-throwback.png`, `3-league.png`, `4-guru.png`, `5-weekend.png`
 - **Description:**
 
