@@ -1,0 +1,6 @@
+{
+  "_note": "Instagram and LinkedIn handles to tag. Only add one after opening the account and checking it's the official one (verified tick, or linked from the company's own website). Never guess: tagging the wrong account is worse than not tagging. Brands are keyed by brand name, agencies by agencyKey. Use null if there isn't one.",
+  "_example": { "instagram": "handle_without_the_at", "linkedin": "company-page-slug" },
+  "brands": {},
+  "agencies": {}
+}

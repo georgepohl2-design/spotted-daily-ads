@@ -120,6 +120,7 @@ data/                The picks, quotes and league table (this is what the weekly
 icons/               The gull, at Chrome's icon sizes
 scripts/validate.py  The data checker
 scripts/build_feed.py Builds feed.xml, the RSS feed of picks that have run (for email and feed readers)
+social/              Instagram and LinkedIn posts: image template, caption maker, handles to tag
 docs/                README cover, store screenshots and listing text
 DESIGN.md            Design decisions: name, look, voice, screens
 AUTOMATION.md        The plan for the weekly picks
