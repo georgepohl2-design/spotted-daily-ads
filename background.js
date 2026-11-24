@@ -1,5 +1,6 @@
-// Background worker: the midday nudge and the yellow "new pick" dot.
+// Background worker: the midday nudge and the blue "1" for a new pick.
 import { loadData, todayISO, pickToday, store, weekday, isWeekend } from './lib/data.js';
+import { setNewDot } from './lib/newdot.js';
 
 const NOON = 'midday-nudge';
 const HOURLY = 'badge-check';
@@ -18,7 +19,7 @@ async function schedule() {
 }
 
 // The pick to show today. The popup keeps showing the latest pick for up to
-// four weeks, but the dot and the nudge only fire for a brand-new one.
+// four weeks, but the blue "1" and the nudge only fire for a brand-new one.
 async function todaysPick() {
   const data = await loadData();
   return pickToday(data.spotlights.spotlights, todayISO());
@@ -26,17 +27,10 @@ async function todaysPick() {
 // Never at weekends: the gull is off.
 const isNew = (pick) => pick && pick.featureDate === todayISO() && !isWeekend(todayISO());
 
-// Yellow dot on the icon if today's new pick hasn't been opened yet.
+// A small blue "1" on the icon if today's new pick hasn't been opened yet.
 async function refreshBadge(pick) {
   const seen = (await store.get('lastSeen')) === todayISO();
-  if (isNew(pick) && !seen) {
-    // Chrome draws the badge small in the bottom-right corner of the icon.
-    await chrome.action.setBadgeBackgroundColor({ color: '#FFD500' });
-    if (chrome.action.setBadgeTextColor) await chrome.action.setBadgeTextColor({ color: '#FFD500' });
-    await chrome.action.setBadgeText({ text: ' ' });
-  } else {
-    await chrome.action.setBadgeText({ text: '' });
-  }
+  await setNewDot(isNew(pick) && !seen);
 }
 
 async function middayNudge() {

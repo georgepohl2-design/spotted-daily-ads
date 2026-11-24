@@ -1,6 +1,7 @@
 import {
   loadData, todayISO, niceDate, pastPicks, pickToday, issueNumber, streetCred, safeUrl, store, weekday, daysBetween,
 } from './lib/data.js';
+import { setNewDot } from './lib/newdot.js';
 
 const $ = (id) => document.getElementById(id);
 const hasExt = typeof chrome !== 'undefined' && !!(chrome.runtime && chrome.runtime.id);
@@ -244,9 +245,9 @@ async function start() {
   const startTab = params.get('tab');
   showTab(TITLES[startTab] ? startTab : 'spotlight');
 
-  // Opening the popup counts as "seen": clear the yellow dot.
+  // Opening the popup counts as "seen": clear the blue "1".
   await store.set('lastSeen', TODAY);
-  if (hasExt) chrome.action.setBadgeText({ text: '' });
+  if (hasExt) setNewDot(false).catch(() => {});
 }
 
 start().catch((err) => {

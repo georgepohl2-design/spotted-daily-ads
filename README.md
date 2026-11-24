@@ -31,7 +31,7 @@ Click the seagull in your Chrome toolbar and you get the day's ad:
 - **A link** to read more on a free-to-read site.
 
 Plus:
-- **A yellow dot** on the icon when there's a new ad you haven't seen.
+- **A little blue "1"** on the icon when there's a new ad you haven't seen, like an unread message.
 - **A midday ping:** a notification at 12:00 on weekdays, like "Tesco by BBH London".
 - **Don't poke the gull.** Hover over it and it glares at you. Click it and it squawks.
 - **Nothing stale.** A fresh pick is never shown more than four weeks after the campaign launched.
@@ -114,7 +114,7 @@ Not pulled in automatically, but you should listen or follow anyway:
 ```
 manifest.json        Chrome extension settings (Manifest V3)
 popup.html/.css/.js  The popup you see
-background.js        The midday nudge and the yellow dot
+background.js        The midday nudge and the blue "1" for a new pick
 lib/                 Shared code: loading data, dates, league table maths
 data/                The picks, quotes and league table (this is what the weekly job updates)
 icons/               The gull, at Chrome's icon sizes
