@@ -32,7 +32,7 @@ Click the seagull in your Chrome toolbar and you get the day's ad:
 
 Plus:
 - **A little blue "1"** on the icon when there's a new ad you haven't seen, like an unread message.
-- **A midday ping:** a notification at 12:00 on weekdays, like "Tesco by BBH London".
+- **A midday ping:** a notification at 12:00 on weekdays, like "Spotted ad: Sainsbury's by New Commercial Arts. “The Big Delivery”". A setup page on install checks it actually shows up on your computer.
 - **Don't poke the gull.** Hover over it and it glares at you. Click it and it squawks.
 - **Nothing stale.** A fresh pick is never shown more than four weeks after the campaign launched.
 
@@ -42,7 +42,7 @@ Plus:
 
 ## Install it (no coding needed, about 2 minutes)
 
-It's not on the Chrome Web Store yet, so you load it yourself. It's easier than it sounds.
+It's in **beta** and not on the Chrome Web Store yet, so you load it yourself. It's easier than it sounds.
 
 1. **Download it.** On this page, click the green **Code** button, then **Download ZIP**.
 2. **Unzip it.** Double-click the downloaded file. You'll get a folder called `spotted-daily-ads-main`.
@@ -115,6 +115,7 @@ Not pulled in automatically, but you should listen or follow anyway:
 manifest.json        Chrome extension settings (Manifest V3)
 popup.html/.css/.js  The popup you see
 background.js        The midday nudge and the blue "1" for a new pick
+welcome.html         The setup page that opens on install: test the midday alert
 lib/                 Shared code: loading data, dates, league table maths
 data/                The picks, quotes and league table (this is what the weekly job updates)
 icons/               The gull, at Chrome's icon sizes

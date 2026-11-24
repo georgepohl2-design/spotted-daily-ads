@@ -208,6 +208,9 @@ main { padding: 12px 14px 4px; }
 [hidden] { display: none !important; }
 
 /* Reminder strip until the midday alert is tested */
-.alert-nudge { display: block; background: #E8F0FE; color: #174EA6; font-weight: 700; font-size: 12px; text-decoration: none; padding: 7px 14px; border-bottom: 1px solid #C6DAFC; }
+.alert-nudge { display: block; margin: 12px 14px 2px; background: #E8F0FE; color: #174EA6; font-weight: 700; font-size: 12px; line-height: 1.35; text-decoration: none; padding: 8px 12px; border: 1px solid #C6DAFC; border-radius: 10px; }
 .alert-nudge:hover { text-decoration: underline; }
 .alert-nudge[hidden] { display: none; }
+
+/* Beta pill in the masthead */
+.beta-tag { margin-left: auto; margin-right: 10px; padding: 1px 7px; border: 1.5px solid #fff; border-radius: 99px; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }

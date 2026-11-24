@@ -1,9 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Spotted. Dope Daily Ad Campaigns",
+  "name": "Spotted. Beta: Dope Daily Ad Campaigns",
   "short_name": "Spotted.",
   "version": "0.1.0",
-  "description": "A dope new ad campaign revealed every weekday at midday. Who made it (agency or in-house) and why it's good.",
+  "version_name": "0.1 beta",
+  "description": "Beta. A dope new ad campaign revealed every weekday at midday. Who made it (agency or in-house) and why it's good.",
   "action": {
     "default_title": "Spotted.",
     "default_popup": "popup.html",

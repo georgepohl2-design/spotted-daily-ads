@@ -10,6 +10,7 @@
   <header class="mast">
     <img src="icons/gull.svg" alt="" class="gull">
     <span class="mast-title">Spotted.</span>
+    <span class="beta-tag">Beta</span>
   </header>
 
   <main class="card">
@@ -18,13 +19,20 @@
     <p class="lead">Every weekday at 12:00 the gull drops a dope new ad. Make sure you actually see it.</p>
 
     <ol class="steps">
-      <li id="step-test" class="step">
-        <h2><span class="num">1</span> Send yourself a test</h2>
-        <p class="muted">If your computer asks, click <b>Allow</b>.</p>
+      <li id="step-setup" class="step">
+        <h2><span class="num">1</span> Let Chrome show alerts</h2>
+        <p class="muted">If a box just popped up asking to allow notifications, click <b>Allow</b>. Then check:</p>
+        <a id="open-settings" class="btn ghost settings-btn" hidden>Open notification settings ↗</a>
+        <ol id="setup-steps" class="setup"></ol>
+        <p class="note">This only lets Chrome show alerts. Websites still have to ask you first, so it won't turn on alerts from everything.</p>
+      </li>
+
+      <li class="step">
+        <h2><span class="num">2</span> Send yourself a test</h2>
         <button id="send-test" class="btn">Send me a test alert</button>
 
         <div id="did-it" class="ask" hidden>
-          <p><b>Did a Spotted. alert pop up?</b></p>
+          <p><b>Did a Spotted. alert pop up?</b> The gull in your toolbar should have a blue <span class="dot">1</span> now too.</p>
           <div class="row">
             <button id="yes" class="btn">Yes, got it</button>
             <button id="no" class="btn ghost">No, nothing</button>
@@ -36,15 +44,14 @@
         </div>
 
         <div id="fix" class="fix" hidden>
-          <p><b>Your computer is hiding it. Quick fix:</b></p>
-          <ol id="fix-steps"></ol>
+          <p id="fix-text"><b>Your computer is still hiding it.</b> Go through step 1 again, then try again.</p>
           <button id="try-again" class="btn">Try again</button>
         </div>
       </li>
 
       <li class="step">
-        <h2><span class="num">2</span> Pin the gull</h2>
-        <p class="muted">Click the jigsaw piece at the top right of Chrome, then the pin next to Spotted. A blue <span class="dot">1</span> shows when there's a new ad.</p>
+        <h2><span class="num">3</span> Pin the gull</h2>
+        <p class="muted">Click the jigsaw piece at the top right of Chrome, then the pin next to Spotted. A blue <span class="dot">1</span> shows when there's a new ad, even if alerts are off.</p>
       </li>
     </ol>
   </main>

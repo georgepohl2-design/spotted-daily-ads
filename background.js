@@ -1,5 +1,5 @@
 // Background worker: the midday nudge and the blue "1" for a new pick.
-import { loadData, todayISO, pickToday, store, weekday, isWeekend } from './lib/data.js';
+import { loadData, todayISO, pickToday, store, isWeekend, alertMessage, alertTitle } from './lib/data.js';
 import { setNewDot } from './lib/newdot.js';
 
 const NOON = 'midday-nudge';
@@ -46,8 +46,8 @@ async function middayNudge() {
   await chrome.notifications.create(`spotted-${today}`, {
     type: 'basic',
     iconUrl: 'icons/icon128.png',
-    title: 'Spotted.',
-    message: `${pick.throwback ? `Throwback ${weekday(today)}: ` : ''}${pick.brand} by ${pick.agency}`,
+    title: alertTitle(pick),
+    message: alertMessage(pick),
     priority: 2,
     requireInteraction: true, // stays on screen until clicked, where the computer allows it
   });
