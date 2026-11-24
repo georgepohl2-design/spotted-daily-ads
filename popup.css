@@ -206,3 +206,8 @@ main { padding: 12px 14px 4px; }
 .muted { color: var(--muted); }
 .small { font-size: 11px; }
 [hidden] { display: none !important; }
+
+/* Reminder strip until the midday alert is tested */
+.alert-nudge { display: block; background: #E8F0FE; color: #174EA6; font-weight: 700; font-size: 12px; text-decoration: none; padding: 7px 14px; border-bottom: 1px solid #C6DAFC; }
+.alert-nudge:hover { text-decoration: underline; }
+.alert-nudge[hidden] { display: none; }

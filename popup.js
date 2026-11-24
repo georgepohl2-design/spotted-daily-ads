@@ -245,6 +245,9 @@ async function start() {
   const startTab = params.get('tab');
   showTab(TITLES[startTab] ? startTab : 'spotlight');
 
+  // Until they've confirmed the test alert, nudge them to set it up.
+  if (hasExt && !(await store.get('alertsOk'))) $('alert-nudge').hidden = false;
+
   // Opening the popup counts as "seen": clear the blue "1".
   await store.set('lastSeen', TODAY);
   if (hasExt) setNewDot(false).catch(() => {});

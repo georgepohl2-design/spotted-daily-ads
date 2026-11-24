@@ -33,39 +33,57 @@ async function refreshBadge(pick) {
   await setNewDot(isNew(pick) && !seen);
 }
 
+// If Chrome was closed or the laptop asleep at noon, send it as soon as we're back (until 8pm).
+const pastNoon = () => { const h = new Date().getHours(); return h >= 12 && h < 20; };
+
 async function middayNudge() {
   const pick = await todaysPick();
   await refreshBadge(pick);
   if (!isNew(pick)) return;
   const today = todayISO();
   if ((await store.get('lastNotified')) === today) return;
-  await store.set('lastNotified', today);
-  chrome.notifications.create(`spotted-${today}`, {
+  // Only count it as sent once Chrome has actually shown it.
+  await chrome.notifications.create(`spotted-${today}`, {
     type: 'basic',
     iconUrl: 'icons/icon128.png',
     title: 'Spotted.',
     message: `${pick.throwback ? `Throwback ${weekday(today)}: ` : ''}${pick.brand} by ${pick.agency}`,
-    priority: 0,
+    priority: 2,
+    requireInteraction: true, // stays on screen until clicked, where the computer allows it
   });
+  await store.set('lastNotified', today);
 }
 
-chrome.runtime.onInstalled.addListener(async () => {
+// Badge, plus a late nudge if noon was missed.
+async function check() {
+  const seen = (await store.get('lastSeen')) === todayISO();
+  if (pastNoon() && !seen) return middayNudge();
+  return refreshBadge(await todaysPick());
+}
+
+chrome.runtime.onInstalled.addListener(async ({ reason }) => {
   await schedule();
-  refreshBadge(await todaysPick());
+  // First install: open the page that tests the alert, so nobody misses midday.
+  if (reason === 'install') {
+    chrome.tabs.create({ url: chrome.runtime.getURL('welcome.html') });
+    return refreshBadge(await todaysPick());
+  }
+  check();
 });
 
 chrome.runtime.onStartup.addListener(async () => {
   await schedule();
-  refreshBadge(await todaysPick());
+  check();
 });
 
 chrome.alarms.onAlarm.addListener(async (alarm) => {
   if (alarm.name === NOON) return middayNudge();
-  if (alarm.name === HOURLY) return refreshBadge(await todaysPick());
+  if (alarm.name === HOURLY) return check();
 });
 
 chrome.notifications.onClicked.addListener(async (id) => {
   chrome.notifications.clear(id);
+  if (id === 'spotted-test') return;
   try {
     await chrome.action.openPopup();
   } catch (_) {

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spotted. Turn on the midday alert</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <header class="mast">
+    <img src="icons/gull.svg" alt="" class="gull">
+    <span class="mast-title">Spotted.</span>
+  </header>
+
+  <main class="card">
+    <p class="kicker">One last thing</p>
+    <h1>Turn on the midday alert</h1>
+    <p class="lead">Every weekday at 12:00 the gull drops a dope new ad. Make sure you actually see it.</p>
+
+    <ol class="steps">
+      <li id="step-test" class="step">
+        <h2><span class="num">1</span> Send yourself a test</h2>
+        <p class="muted">If your computer asks, click <b>Allow</b>.</p>
+        <button id="send-test" class="btn">Send me a test alert</button>
+
+        <div id="did-it" class="ask" hidden>
+          <p><b>Did a Spotted. alert pop up?</b></p>
+          <div class="row">
+            <button id="yes" class="btn">Yes, got it</button>
+            <button id="no" class="btn ghost">No, nothing</button>
+          </div>
+        </div>
+
+        <div id="sorted" class="good" hidden>
+          <p><b>Sorted.</b> See you at midday.</p>
+        </div>
+
+        <div id="fix" class="fix" hidden>
+          <p><b>Your computer is hiding it. Quick fix:</b></p>
+          <ol id="fix-steps"></ol>
+          <button id="try-again" class="btn">Try again</button>
+        </div>
+      </li>
+
+      <li class="step">
+        <h2><span class="num">2</span> Pin the gull</h2>
+        <p class="muted">Click the jigsaw piece at the top right of Chrome, then the pin next to Spotted. A blue <span class="dot">1</span> shows when there's a new ad.</p>
+      </li>
+    </ol>
+  </main>
+
+  <script type="module" src="welcome.js"></script>
+</body>
+</html>
