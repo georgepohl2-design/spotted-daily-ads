@@ -2,8 +2,8 @@
 
 ## Store listing tab
 
-- **Name** (from the manifest): Spotted. Beta: Dope Daily Ad Campaigns
-- **Summary** (from the manifest): Beta. A dope new ad campaign revealed every weekday at midday. Who made it (agency or in-house) and why it's good.
+- **Name** (from the manifest): Spotted. Dope Daily Ad Campaigns
+- **Summary** (from the manifest): A dope new ad campaign revealed every weekday at midday. Who made it (agency or in-house) and why it's good. (Beta)
 - **Category:** Fun (or the closest match the dashboard offers, e.g. Lifestyle)
 - **Language:** English (UK)
 - **Store icon:** `icons/icon128.png`
@@ -17,36 +17,29 @@
 - **Description:**
 
 ```
-BETA: Spotted. is brand new and we're still testing it. Picks, alerts and the league table might change as we go.
+One great ad campaign. Every weekday. Midday. Right in your toolbar.
 
-Spotted. puts one great ad campaign in your browser every weekday at midday.
-
-Click the gull and you get:
-• The brand, and who made it: the agency, or the in-house team
+Click the gull and get:
+• The brand and who made it
 • Why it's good, in two blunt lines
-• A link to read more on a free-to-read trade site
-• An award badge if it's won something big (Cannes Lions, D&AD, Effies, IPA)
+• A link to watch or read more
+• An award badge if it won something big
 
-Every week:
-• Monday, Wednesday, Friday: something fresh, launched in the last few weeks
-• Throwback Tuesday and Throwback Thursday: big award winners from the last year. Not new. Still slaps.
-• Weekends off. Open it on a Saturday and the gull will tell you to go outside.
+The week:
+• Mon, Wed, Fri: fresh work
+• Tue, Thu: throwbacks. Not new. Still slaps.
+• Weekends: the gull's off. Go outside.
 
 Also inside:
-• Guru says: your daily dose of wisdom, one quote a day from ad legends, CMOs, founders and pretty famous dead people. Ogilvy, Hegarty, Cialdini, Jobs and friends. Every quote checked against a source.
+• Guru says: a daily quote from ad legends, CMOs, founders and pretty famous dead people
 • The Spotted League Table: which agencies are winning all the shiny things. Nobody cares. But we care.
-• Archive: every past pick, searchable by brand or agency.
+• Archive: every past pick
 
-Never miss it:
-• A midday alert on weekdays, with the brand, the agency and the campaign
-• A blue "1" on the gull when there's a new one you haven't opened
-• A quick setup page when you install, to check the alert actually shows up on your computer
+A midday alert and a blue "1" so you never miss one.
 
-It's a beta, so tell us what to fix: there's a feedback link at the bottom of the popup.
+No accounts. No tracking. No ads. Ironic, we know.
 
-No accounts. No tracking. No ads. It reads a public list of picks and that's it.
-
-Made for marketers, creatives, strategists and anyone who likes a good ad.
+It's a beta, so be nice. Something broken? Hit the feedback link at the bottom.
 ```
 
 ## Privacy practices tab
@@ -61,7 +54,7 @@ Made for marketers, creatives, strategists and anyone who likes a good ad.
 
 ## Distribution tab
 
-- **Visibility:** Public. It's labelled Beta in the name, the summary, the description and the popup.
+- **Visibility:** Public. It's labelled Beta at the end of the summary and the description, and in the popup. Not in the name.
   - Want a quieter start? Pick **Unlisted**: only people with the link can find it. Switch to Public later.
 - **Regions:** All regions
 - **Price:** Free
