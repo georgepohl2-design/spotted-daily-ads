@@ -2,6 +2,7 @@ import {
   loadData, todayISO, niceDate, pastPicks, pickToday, issueNumber, streetCred, safeUrl, store, weekday, daysBetween,
 } from './lib/data.js';
 import { setNewDot } from './lib/newdot.js';
+import { FEEDBACK_URL } from './lib/config.js';
 
 const $ = (id) => document.getElementById(id);
 const hasExt = typeof chrome !== 'undefined' && !!(chrome.runtime && chrome.runtime.id);
@@ -225,6 +226,7 @@ function showTab(name) {
   for (const key of Object.keys(TITLES)) $('tab-' + key).hidden = key !== name;
   $('mast-title').textContent = TITLES[name];
   document.querySelector('.beta-tag').hidden = name === 'league'; // the long title needs the room
+  $('feedback').hidden = !(FEEDBACK_URL && name === 'spotlight');
   $('mast-meta').textContent = name === 'spotlight' ? ($('mast-meta').dataset.spotlight || '') : name === 'league' ? '2K26 season' : '';
   if (name === 'archive') closeArchiveItem();
 }
@@ -237,6 +239,7 @@ async function start() {
   $('archive-search').addEventListener('input', renderArchive);
   $('archive-back').addEventListener('click', closeArchiveItem);
   $('league-more').addEventListener('click', () => { showAll = !showAll; renderLeague(); });
+  if (FEEDBACK_URL) $('feedback-link').href = FEEDBACK_URL;
 
   DATA = await loadData();
   renderSpotlight();

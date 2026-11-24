@@ -44,3 +44,6 @@ h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap:
 .settings-btn[hidden] { display: none; }
 .note { margin: 10px 0 0; font-size: 13px; color: var(--muted); background: #F1EFE8; border-radius: 8px; padding: 8px 12px; }
 .beta-tag { padding: 2px 9px; border: 2px solid #fff; border-radius: 99px; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
+.feedback { margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.feedback a { color: var(--ink); font-weight: 700; }
+.feedback[hidden] { display: none; }

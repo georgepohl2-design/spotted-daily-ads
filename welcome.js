@@ -1,6 +1,9 @@
 // Opens once, on install: set up the midday alert, test it, pin the gull.
 import { store, loadData, pastPicks, todayISO, alertMessage, alertTitle } from './lib/data.js';
 import { setNewDot } from './lib/newdot.js';
+import { FEEDBACK_URL } from './lib/config.js';
+
+if (FEEDBACK_URL) { document.getElementById('feedback-link').href = FEEDBACK_URL; document.getElementById('feedback').hidden = false; }
 
 const $ = (id) => document.getElementById(id);
 const hasExt = typeof chrome !== 'undefined' && !!(chrome.runtime && chrome.runtime.id);

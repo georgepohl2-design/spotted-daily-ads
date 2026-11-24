@@ -8,7 +8,12 @@
 - **Language:** English (UK)
 - **Store icon:** `icons/icon128.png`
 - **Small promo tile** (440x280): `docs/store/promo-tile.png` (made from `promo.html`)
-- **Screenshots** (1280x800, in this order): `docs/store/1-today.png`, `2-throwback.png`, `3-league.png`, `4-guru.png`, `5-weekend.png`
+- **Screenshots** (1280x800, up to 5, in this order): `1-today.png` (the big gull), `2-throwback.png`, `3-league.png`, `4-guru.png`, `5-weekend.png`
+- **Global promo video:** leave empty. We don't have one.
+- **Marquee promo tile** (1400x560): `docs/store/marquee-tile.png`. Only used if Google features Spotted. on the store's front page.
+- **Official URL:** leave empty. It needs a website domain you own and have verified with Google.
+- **Homepage URL:** https://georgepohl2-design.github.io/spotted-daily-ads/
+- **Support URL:** https://docs.google.com/forms/d/e/1FAIpQLSfLlMF6IJ3-YZ69MpcW8G3UamnhCpErtVRmsgW77TWPg_F0Qg/viewform (the feedback form)
 - **Description:**
 
 ```
@@ -36,6 +41,8 @@ Never miss it:
 • A midday alert on weekdays, with the brand, the agency and the campaign
 • A blue "1" on the gull when there's a new one you haven't opened
 • A quick setup page when you install, to check the alert actually shows up on your computer
+
+It's a beta, so tell us what to fix: there's a feedback link at the bottom of the popup.
 
 No accounts. No tracking. No ads. It reads a public list of picks and that's it.
 

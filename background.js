@@ -1,6 +1,10 @@
 // Background worker: the midday nudge and the blue "1" for a new pick.
 import { loadData, todayISO, pickToday, store, isWeekend, alertMessage, alertTitle } from './lib/data.js';
 import { setNewDot } from './lib/newdot.js';
+import { FEEDBACK_URL } from './lib/config.js';
+
+// Uninstalling opens the feedback form, so we can ask why.
+if (FEEDBACK_URL) chrome.runtime.setUninstallURL(FEEDBACK_URL);
 
 const NOON = 'midday-nudge';
 const HOURLY = 'badge-check';
