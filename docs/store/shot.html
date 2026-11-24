@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Spotted. store screenshot</title>
 <!-- Renders the 1280x800 Chrome Web Store screenshots. Not part of the extension.
-     shot.html?date=2026-11-23&tab=spotlight&h=Headline&s=Subline -->
+     shot.html?date=2026-11-23&tab=spotlight&h=Headline&s=Subline (add &big=1 for the big gull) -->
 <style>
   html, body { margin: 0; }
   body { width: 1280px; height: 800px; overflow: hidden; background: #E24B4A;
@@ -14,6 +14,11 @@
   .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
   .brand img { width: 72px; height: 72px; }
   .brand span { font-family: Anton, Impact, sans-serif; font-size: 56px; letter-spacing: 1px; }
+  .brand .beta { font-family: inherit; font-size: 16px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border: 2.5px solid #fff; border-radius: 99px; padding: 3px 12px; align-self: center; }
+  /* big=1: the big gull, for the first screenshot */
+  body.big .brand { flex-wrap: wrap; margin-bottom: 18px; }
+  body.big .brand img { width: 230px; height: 230px; flex-basis: 100%; max-width: 230px; margin: -10px 0 4px -10px; }
+  body.big .brand span:not(.beta) { font-size: 76px; }
   h1 { font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 64px; line-height: 1.05; margin: 0 0 18px; }
   p { font-size: 26px; line-height: 1.35; margin: 0; color: #FCEBEB; }
   .phone { width: 360px; height: 680px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 34px rgba(0,0,0,.28); }
@@ -22,13 +27,14 @@
 </head>
 <body>
   <div class="words">
-    <div class="brand"><img src="../../icons/gull-512.png" alt=""><span>Spotted.</span></div>
+    <div class="brand"><img src="../../icons/gull-512.png" alt=""><span>Spotted.</span><span class="beta">Beta</span></div>
     <h1 id="h"></h1>
     <p id="s"></p>
   </div>
   <div class="phone"><iframe id="f"></iframe></div>
   <script>
     const q = new URLSearchParams(location.search);
+    if (q.get('big')) { document.body.classList.add('big'); document.querySelector('.brand img').src = '../../icons/gull.svg'; }
     document.getElementById('h').textContent = q.get('h') || '';
     document.getElementById('s').textContent = q.get('s') || '';
     const extra = q.get('quote') ? '&quote=' + q.get('quote') : '';

@@ -224,6 +224,7 @@ function showTab(name) {
   }
   for (const key of Object.keys(TITLES)) $('tab-' + key).hidden = key !== name;
   $('mast-title').textContent = TITLES[name];
+  document.querySelector('.beta-tag').hidden = name === 'league'; // the long title needs the room
   $('mast-meta').textContent = name === 'spotlight' ? ($('mast-meta').dataset.spotlight || '') : name === 'league' ? '2K26 season' : '';
   if (name === 'archive') closeArchiveItem();
 }
