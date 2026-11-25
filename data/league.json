@@ -234,6 +234,19 @@
     "mindshare": {
       "name": "Mindshare",
       "url": null
+    },
+    "none": {
+      "name": "No agency found",
+      "url": null,
+      "inHouse": true
+    },
+    "glue-society": {
+      "name": "Glue Society",
+      "url": null
+    },
+    "nord-stockholm": {
+      "name": "NORD Stockholm",
+      "url": null
     }
   },
   "wins": [

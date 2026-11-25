@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-23",
-  "rules": "One pick per weekday, none at weekends. Tuesdays and Thursdays are throwbacks (from 23 Nov 2026): major-award winners from the last year, marked throwback: true. Every other pick is fresh: shown only while it's 28 days old or less. campaignDate = launch or first trade coverage. Blurbs are written in our own words. format: what kind of idea it is (ad, stunt, activation, gaming collab, brand collab, out of home); leave it out for a normal ad. source.video: true when the link is the work itself on YouTube or similar, so the button says Watch. award is null unless the work officially won a major award. points: what the pick scores the agency in the Spotted League Table. 1 normally; 2 or 3 for something super special (a top Grand Prix or creative effectiveness win, or work that's genuinely super dope and widely credited).",
+  "updated": "2026-11-25",
+  "rules": "One pick per weekday, none at weekends. Tuesdays and Thursdays are throwbacks (from 23 Nov 2026): major-award winners from the last year, marked throwback: true. Every other pick is fresh: shown only while it's 28 days old or less. campaignDate = launch or first trade coverage. Blurbs are written in our own words. format: what kind of idea it is (ad, stunt, activation, partnership, brand collab, gaming collab, out of home, influencer campaign, creator series, seeding, SMS, push notification, app, audio ad, live selling, social show, clipping, odd tactic); leave it out for a normal ad. b2b: true for a business-to-business brand (shows a B2B tag). agency 'No agency found' with agencyKey 'none' when no agency is credited anywhere; never guess. source.video: true when the link is the work itself on YouTube or similar, so the button says Watch. award is null unless the work officially won a major award. points: what the pick scores the agency in the Spotted League Table. 1 normally; 2 or 3 for something super special (a top Grand Prix or creative effectiveness win, or work that's genuinely super dope and widely credited).",
   "spotlights": [
     {
       "featureDate": "2026-11-02",
@@ -474,22 +474,24 @@
     },
     {
       "featureDate": "2026-12-02",
-      "campaignDate": "2026-11-05",
-      "brand": "Aldi",
-      "agency": "McCann Manchester",
-      "agencyKey": "mccann-manchester",
+      "campaignDate": "2026-11-24",
+      "brand": "ABC",
+      "agency": "Glue Society",
+      "agencyKey": "glue-society",
       "agencyUrl": null,
-      "campaign": "The Christmas Wish",
+      "campaign": "The Big Banana Heist",
+      "format": "stunt",
       "award": null,
-      "blurb": "Kevin the Carrot hunts for a missing cauliflower dog. Year ten, still the weirdest thing on telly. Respect.",
+      "blurb": "Turned Australia's Big Banana into a giant protein bar overnight to plug a show about ultra-processed food. Petty. Brilliant.",
       "source": {
-        "name": "Grocery Gazette",
-        "url": "https://www.grocerygazette.co.uk/2026/11/05/watch-aldi-releases-full-christmas-2026-advert-starring-kevin-the-carrot/"
+        "name": "B&T",
+        "url": "https://www.bandt.com.au/abc-takes-over-big-banana-to-shine-a-light-on-ultra-processed-food/"
       },
       "tags": [
-        "christmas",
-        "uk",
-        "retail"
+        "australia",
+        "tv",
+        "stunt",
+        "food"
       ],
       "points": 1
     },
@@ -519,23 +521,24 @@
     },
     {
       "featureDate": "2026-12-04",
-      "campaignDate": "2026-11-08",
-      "brand": "EchoPark",
-      "agency": "VML New York",
-      "agencyKey": "vml-new-york",
+      "campaignDate": "2026-11-16",
+      "brand": "KFC Australia",
+      "agency": "No agency found",
+      "agencyKey": "none",
       "agencyUrl": null,
-      "campaign": "Every Car, Happy Owner",
+      "campaign": "Go Full Chicken: the Ann Alibi funeral",
+      "format": "stunt",
       "award": null,
-      "blurb": "Owen Wilson suffers through buying a used car so you don't have to. Wow.",
+      "blurb": "A fake funeral for a fake woman on GTA VI launch day, so fans had an excuse to skip work. Free chicken for mourners. Sorry for your loss.",
       "source": {
-        "name": "Ads of the World",
-        "url": "https://www.adsoftheworld.com/campaigns/every-car-happy-owner"
+        "name": "Mediaweek",
+        "url": "https://www.mediaweek.com.au/kfc-stages-funeral-gta-vi-fans-alibi"
       },
       "tags": [
-        "us",
-        "cars",
-        "comedy",
-        "celebrity"
+        "australia",
+        "food",
+        "gaming",
+        "stunt"
       ],
       "points": 1
     },
@@ -559,6 +562,34 @@
         "film"
       ],
       "points": 2
+    },
+    {
+      "featureDate": "2026-12-08",
+      "brand": "SKF",
+      "agency": "NORD Stockholm",
+      "agencyKey": "nord-stockholm",
+      "agencyUrl": null,
+      "campaign": "The Faroe Islands Space Program",
+      "format": "stunt",
+      "b2b": true,
+      "award": {
+        "show": "Cannes Lions 2026",
+        "prize": "Grand Prix, Creative B2B",
+        "year": 2026
+      },
+      "blurb": "A bearings company launched a space programme that never leaves Earth: tidal power, sold as moon power. B2B can be fun. Who knew.",
+      "source": {
+        "name": "Cannes Lions",
+        "url": "https://www.canneslions.com/news/73rd-cannes-lions-international-festival-of-creativity-announces-first-winners"
+      },
+      "tags": [
+        "b2b",
+        "energy",
+        "sweden",
+        "faroe-islands"
+      ],
+      "throwback": true,
+      "points": 3
     },
     {
       "featureDate": "2026-12-09",

@@ -112,6 +112,7 @@ main { padding: 12px 14px 4px; }
 .agency { margin: 6px 0 0; font-size: 18px; font-weight: 700; line-height: 1.25; }
 .agency .by { font-weight: 400; color: var(--muted); }
 .agency a { color: var(--red-dark); }
+.agency.none { font-size: 15px; font-weight: 400; color: var(--muted); font-style: italic; }
 .card-row { border-top: 1px solid var(--line-soft); margin-top: 12px; padding-top: 10px; }
 .row-label { margin: 0 0 3px; font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; }
 .campaign { margin: 0 0 8px; font-family: var(--headline); font-weight: 400; font-size: 22px; line-height: 1.1; }
@@ -220,3 +221,4 @@ main { padding: 12px 14px 4px; }
 .feedback a { color: var(--muted); }
 .feedback a:hover { color: var(--ink); }
 .feedback[hidden] { display: none; }
+.drop-note { margin: 0 0 10px; padding: 6px 10px; background: #F1EFE8; border-radius: 8px; font-size: 12px; }

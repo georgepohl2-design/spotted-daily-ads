@@ -16,10 +16,19 @@ function nextNoon() {
   return d.getTime();
 }
 
+// 12:00 on the computer's own clock, wherever it is. A one-off alarm, set again each
+// time it goes off and checked every hour, so it moves with the computer when it
+// changes time zone (London to Paris) or the clocks go forward or back.
+async function scheduleNoon() {
+  const when = nextNoon();
+  const alarm = await chrome.alarms.get(NOON);
+  if (alarm && Math.abs(alarm.scheduledTime - when) < 60 * 1000) return;
+  await chrome.alarms.create(NOON, { when });
+}
+
 async function schedule() {
-  await chrome.alarms.clear(NOON);
-  chrome.alarms.create(NOON, { when: nextNoon(), periodInMinutes: 24 * 60 });
-  chrome.alarms.create(HOURLY, { periodInMinutes: 60 });
+  await scheduleNoon();
+  if (!(await chrome.alarms.get(HOURLY))) await chrome.alarms.create(HOURLY, { periodInMinutes: 60 });
 }
 
 // The pick to show today. The popup keeps showing the latest pick for up to
@@ -81,7 +90,9 @@ chrome.runtime.onStartup.addListener(async () => {
 });
 
 chrome.alarms.onAlarm.addListener(async (alarm) => {
-  if (alarm.name === NOON) return middayNudge();
+  await scheduleNoon();
+  // A noon alarm that only goes off when the laptop wakes up late at night stays quiet.
+  if (alarm.name === NOON) return pastNoon() ? middayNudge() : check();
   if (alarm.name === HOURLY) return check();
 });
 

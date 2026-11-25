@@ -7,8 +7,9 @@ Run it from the repo folder:
 
 It stops a bad pick going out: missing fields, a duplicate day, a weekend pick,
 a fresh campaign that's more than four weeks old on the day it runs, a
-throwback that isn't a major-award winner from the last year, or a link that
-isn't https. Tuesdays and Thursdays must be throwbacks.
+throwback that isn't a major-award winner from the last year, a week with more
+than three normal video or TV ads, or a link that isn't https. Tuesdays and
+Thursdays must be throwbacks.
 """
 import json
 import sys
@@ -22,7 +23,17 @@ MAX_AGE_DAYS = 28
 MAJOR_SHOWS = ["Cannes Lions", "D&AD", "The One Show", "Clio", "Effie", "IPA Effectiveness", "Eurobest", "Epica", "LIA"]
 MAJOR_PRIZES = ["grand prix", "titanium", "gold", "silver", "bronze", "pencil", "grand effie", "grand clio", "best of show"]
 # What kind of idea it is. Not just ads: stunts, activations and gaming collabs count too.
-FORMATS = ["ad", "stunt", "activation", "gaming collab", "brand collab", "out of home"]
+FORMATS = ["ad", "stunt", "activation", "partnership", "brand collab", "gaming collab", "out of home",
+           "influencer campaign", "creator series", "seeding", "SMS", "push notification", "app",
+           "audio ad", "live selling", "social show", "clipping", "odd tactic"]
+# When no agency is credited anywhere, the pick says so instead of guessing.
+NO_AGENCY = "No agency found"
+# Aim for one B2B pick every two to three weeks. Only a heads-up, never a blocker.
+B2B_EVERY_DAYS = 21
+# At most this many normal video/TV ads (no format, or "ad") in a Monday-to-Friday week,
+# so odd tactics, stunts and partnerships get in. Counts from this week on.
+MAX_FILMS_A_WEEK = 3
+MIX_FROM = "2026-11-30"
 REQUIRED = ["featureDate", "brand", "agency", "agencyKey", "campaign", "blurb", "source"]
 errors = []
 
@@ -104,6 +115,10 @@ for i, s in enumerate(spots["spotlights"]):
         err(f"{where}: blurb is over 200 characters, keep it blunt")
     if s.get("agencyKey") and s["agencyKey"] not in league["agencies"]:
         err(f"{where}: agencyKey '{s['agencyKey']}' isn't listed in league.json agencies")
+    if (s.get("agency") == NO_AGENCY) != (s.get("agencyKey") == "none"):
+        err(f"{where}: use agency '{NO_AGENCY}' together with agencyKey 'none'")
+    if "b2b" in s and not isinstance(s["b2b"], bool):
+        err(f"{where}: b2b must be true or false")
     if s.get("format") and s["format"] not in FORMATS:
         err(f"{where}: format must be one of {', '.join(FORMATS)} (got {s['format']!r})")
     if "points" in s and s["points"] not in (1, 2, 3):
@@ -115,6 +130,16 @@ for i, s in enumerate(spots["spotlights"]):
             err(f"{where}: award show '{show}' isn't a major show, leave award as null")
         if not any(p in prize.lower() for p in MAJOR_PRIZES):
             err(f"{where}: prize '{prize}' isn't a major prize (Grand Prix, Gold, Silver, Bronze, Pencil...), leave award as null")
+
+films = {}
+for s in spots["spotlights"]:
+    fd = date.fromisoformat(s["featureDate"]) if s.get("featureDate", "") >= MIX_FROM else None
+    if fd and s.get("format", "ad") == "ad":
+        monday = date.fromordinal(fd.toordinal() - fd.weekday()).isoformat()
+        films.setdefault(monday, []).append(s.get("brand", "?"))
+for monday, brands in sorted(films.items()):
+    if len(brands) > MAX_FILMS_A_WEEK:
+        err(f"week of {monday}: {len(brands)} normal video/TV ads ({', '.join(brands)}). Max {MAX_FILMS_A_WEEK}: swap one for a stunt, activation, partnership or collab")
 
 for i, q in enumerate(quotes["quotes"]):
     where = f"quote #{i + 1}"
@@ -146,5 +171,9 @@ if errors:
     for e in errors:
         print(" -", e)
     sys.exit(1)
+b2b = sorted(s["featureDate"] for s in spots["spotlights"] if s.get("b2b"))
+last = max(s["featureDate"] for s in spots["spotlights"])
+if not b2b or (date.fromisoformat(last) - date.fromisoformat(b2b[-1])).days > B2B_EVERY_DAYS:
+    print(f"Heads up: no B2B pick in the last {B2B_EVERY_DAYS} days of picks. Add one if you find something genuinely good.")
 n_tb = sum(1 for s in spots["spotlights"] if s.get("throwback"))
 print(f"All good: {len(spots['spotlights'])} picks ({n_tb} throwbacks), {len(quotes['quotes'])} quotes, {len(league['wins'])} awards.")

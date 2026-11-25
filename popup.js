@@ -1,5 +1,5 @@
 import {
-  loadData, todayISO, niceDate, pastPicks, pickToday, issueNumber, streetCred, safeUrl, store, weekday, daysBetween,
+  loadData, todayISO, niceDate, pastPicks, pickToday, issueNumber, streetCred, safeUrl, store, weekday, daysBetween, beforeNoon, hasAgency,
 } from './lib/data.js';
 import { setNewDot } from './lib/newdot.js';
 import { FEEDBACK_URL } from './lib/config.js';
@@ -46,8 +46,11 @@ function renderCard(s) {
   return el('article', { class: 'card' },
     el('p', { class: 'label' }, s.throwback ? `Throwback ${weekday(s.featureDate)}: still slaps` : `Spotted ${s.format || 'ad'}:`),
     s.throwback && s.format && s.format !== 'ad' ? el('span', { class: 'format-tag' }, s.format) : null,
+    s.b2b ? el('span', { class: 'format-tag' }, 'B2B') : null,
     el('h2', { class: 'brand' }, s.brand),
-    el('p', { class: 'agency' }, el('span', { class: 'by' }, 'by '), s.agency),
+    hasAgency(s)
+      ? el('p', { class: 'agency' }, el('span', { class: 'by' }, 'by '), s.agency)
+      : el('p', { class: 'agency none' }, 'No agency found'),
     el('div', { class: 'card-row' },
       el('p', { class: 'row-label' }, 'Campaign'),
       el('p', { class: 'campaign' }, `“${s.campaign}”`),
@@ -99,6 +102,11 @@ function renderSpotlight() {
   const day = weekday(TODAY);
   if (WEEKEND[day]) box.replaceChildren(renderWeekend(day, pick));
   else box.replaceChildren(pick ? renderCard(pick) : renderEmpty());
+  // Weekday morning: today's pick isn't out yet, so say when it lands.
+  const today = spots.some((s) => s.featureDate === TODAY);
+  if (!WEEKEND[day] && today && TODAY === todayISO() && beforeNoon()) {
+    box.prepend(el('p', { class: 'muted small drop-note' }, `Today's pick drops at 12:00.${pick ? " Here's the last one." : ''}`));
+  }
   $('mast-meta').dataset.spotlight = WEEKEND[day] ? 'Closed' : pick ? `No. ${String(issueNumber(spots, pick)).padStart(3, '0')}` : '';
 }
 
@@ -155,7 +163,7 @@ function renderArchive() {
   });
   $('archive-list').replaceChildren(...hits.map((s) => el('li', {},
     el('button', { onclick: () => openArchiveItem(s) },
-      el('span', {}, el('b', {}, s.brand), el('span', { class: 'by' }, ` by ${s.agency}`)),
+      el('span', {}, el('b', {}, s.brand), el('span', { class: 'by' }, hasAgency(s) ? ` by ${s.agency}` : ' · no agency found')),
     ),
   )));
   $('archive-empty').hidden = hits.length > 0;
@@ -252,8 +260,10 @@ async function start() {
   // Until they've confirmed the test alert, nudge them to set it up.
   if (hasExt && !(await store.get('alertsOk'))) $('alert-nudge').hidden = false;
 
-  // Opening the popup counts as "seen": clear the blue "1".
-  await store.set('lastSeen', TODAY);
+  // Opening the popup counts as "seen": clear the blue "1". It records the pick shown,
+  // so a peek in the morning (yesterday's pick) doesn't cancel today's midday alert.
+  const shown = pickToday(DATA.spotlights.spotlights, TODAY);
+  if (shown) await store.set('lastSeen', shown.featureDate);
   if (hasExt) setNewDot(false).catch(() => {});
 }
 
