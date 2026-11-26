@@ -14,31 +14,47 @@ If you're in marketing or advertising and you like ads, give it a follow. Or don
 
 ## The problem
 
-Good marketers keep a swipe file: a folder of ads they wish they'd made. I've kept one for years.
+The good campaigns are spread all over the place: publications, award shows, LinkedIn, YouTube, influencers, podcasts.
 
-But keeping up is a faff. The good stuff is spread across publications, award shows, LinkedIn, YouTube, influencers and podcasts. Most days you either doom-scroll the lot or miss the work everyone's talking about.
+Most people see one, think "nice", and never save it. Pulling them all together into one place? Who can be bothered.
 
-**Spotted. is a swipe file that fills itself.** We go through all of it, review it, and bring you one a day: two lines on why it's good, and a link to see more.
+**Spotted. can be bothered.** One good recent campaign, pushed to you every weekday at midday. No hunting for it, and none of the crap that usually comes with it.
 
-## The Spotted ad
+## Four sections
 
-Click the seagull in your Chrome toolbar and you get the day's ad:
+Click the seagull on your Chrome toolbar and you get:
+
+### 1. The Spotted ad
 
 - **The brand**, big.
 - **Who made it:** the agency, or the brand's in-house team.
-- **The campaign name**, with a yellow badge only if it's won a major award.
+- **The campaign name.**
 - **Why it's good**, in two blunt lines.
-- **A link** to read more on a free-to-read site.
+- **A link** to learn more on a free-to-read site.
 
 Plus:
 - **A little blue "1"** on the icon when there's a new ad you haven't seen, like an unread message.
-- **A midday ping:** a notification at 12:00 on weekdays, like "Spotted ad: Sainsbury's by New Commercial Arts. “The Big Delivery”". A setup page on install checks it actually shows up on your computer.
+- **A midday ping:** a notification at 12:00 on weekdays with the brand and who made it. A setup page on install checks it actually shows up on your computer.
 - **Don't poke the gull.** Hover over it and it glares at you. Click it and it squawks.
-- **Nothing stale.** A fresh pick is never shown more than four weeks after the campaign launched.
+- **Nothing stale.** Monday, Wednesday and Friday picks are never more than four weeks old. Tuesday and Thursday are throwbacks, so they're allowed to be.
 
-**Prefer email or a feed reader?** Every pick that has run is in the [Spotted. feed](https://georgepohl2-design.github.io/spotted-daily-ads/feed.xml). A weekly email is coming soon.
+### 2. The Spotted League Table (2K26 season)
 
-**No tracking, no accounts, no API keys** inside the extension. It reads a public list of picks and that's it.
+Which agencies are winning all the shiny things. Nobody cares. But we care. First place is King of all agencies, second is the First loser, third gets the wooden spoon.
+
+Agencies score a point every time their work is Spotted (2 or 3 if it's super special). Everyone started with points for 2026's top prizes, from official results only. In-house teams are left out. The joke is on the awards circus, not on anyone's work.
+
+### 3. Guru says
+
+Your daily dose of wisdom: one checked quote a day from an ad legend, CMO or founder.
+
+### 4. Archive
+
+Every past pick, searchable.
+
+**Prefer a feed reader?** Every pick that has run is in the [Spotted. feed](https://georgepohl2-design.github.io/spotted-daily-ads/feed.xml).
+
+**No tracking, no accounts, no API keys** inside the extension. It reads a public list of picks, and every pick is checked by hand before it goes in.
 
 ## Install it (no coding needed, about 2 minutes)
 
@@ -75,39 +91,13 @@ The details are in [AUTOMATION.md](AUTOMATION.md).
 
 ## What makes the cut
 
-- **The whole idea, not just ads:** films, stunts, brand activations, out-of-home, brand collabs and gaming collabs in Roblox, Fortnite and the like.
+- **The whole idea, not just ads:** films, stunts, brand activations, gaming activations, brand collabs, cool growth ideas. Anything that's helping a brand grow.
 - **Fresh:** launched or first covered in the last few weeks. Never older than four.
 - **Throwbacks:** won a major creative or effectiveness award in the last year.
 - **Global, leaning UK, US and Europe.** Anything genuinely interesting from anywhere gets in.
-- **Agency or in-house, always named.** If no source says who made it, it doesn't go in. We never guess.
+- **Agency or in-house, always named.** If no source says who made it, the card says "No agency found". We never guess.
 - **Our words:** the two lines are written fresh, never copied from an article.
 - **Award badge only for the big ones:** a Grand Prix, Titanium, Gold, Silver or Bronze at Cannes Lions, a D&AD Pencil, a One Show Pencil, a Clio, an Effie or an IPA Effectiveness Award. Shortlists and finalists don't count.
-
-## The Spotted League Table (2K26 season)
-
-A cheeky league table of which agencies are winning all the shiny things. Nobody cares. But we care. First place is crowned King of all agencies, second is the First loser, and third gets the wooden spoon.
-
-**How it's scored:**
-- **It's scored off the Spotted ad.** Agencies score when their work is picked.
-- **We search for it everywhere:** work that's won awards, work people are talking about, and work that gets the credit.
-- **One point each time an agency is spotted.** If the work is super special, it can get 2 or 3.
-- **Ties go to whoever was spotted most recently.**
-- **The tally has only just begun.** To kick things off, every agency starts with 3 points for each of 2026's top prizes: the Cannes Lions Grands Prix (including Creative Effectiveness), D&AD Black Pencils, the IPA Effectiveness Grand Prix and the UK Grand Effie. Every win is from official results.
-- **Agencies only.** In-house brand teams are left out.
-- **Credit goes to the agency or office named in the source**, so De La Cruz Ogilvy (Puerto Rico) counts separately from other Ogilvy offices.
-- The season started on 2 November 2026. The joke is on the awards circus, not on anyone's work.
-
-## Also in the popup
-
-**Guru says** (your daily dose of wisdom: one checked quote a day from an ad legend, CMO or founder) and the **Archive** (every past pick, searchable).
-
-## Worth following
-
-Not pulled in automatically, but you should listen or follow anyway:
-- [Breaking & Entering Media](https://www.linkedin.com/company/breaking-entering-media/posts/): fast, fun ad and marketing news on LinkedIn, YouTube, their [newsletter](https://breakingandentering.beehiiv.com) and podcast. One of our key sources.
-- **Uncensored CMO** (podcast)
-- **HUNGRY.** with Dan Pope (podcast on challenger food and drink brands)
-- **On Strategy Showcase** with Fergus O'Carroll (podcast: the strategy behind great campaigns)
 
 ## What's in this repo
 
@@ -128,12 +118,6 @@ AUTOMATION.md        The plan for the weekly picks
 PRIVACY.md           Privacy policy (it collects nothing)
 ```
 
-## Built by
-
-[@georgepohl2-design](https://github.com/georgepohl2-design), a growth marketer building simple AI tools for marketers, each doing one job well. Built with [Claude Code](https://claude.com/claude-code).
-
-Campaign facts belong to the brands and agencies, and the source articles belong to their publishers. Spotted. just points at the good stuff.
-
 ## Licence
 
-All rights reserved, see [LICENSE](LICENSE). Have a look around and install it for yourself, but please don't copy or republish it.
+All rights reserved, see [LICENSE](LICENSE).

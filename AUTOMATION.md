@@ -60,6 +60,12 @@ flowchart LR
 >
 > **Also check:** Ad Age (good for finding work, but mostly paywalled, so link a free source), the Brands in Play podcast (Nic Hill and Albane Prioux, brand activations in gaming), and gaming coverage on The Drum, LBB and Marketing Brew.
 >
+> **Podcasts: check the latest episodes every week.** Go to each show's site, read the recent episodes and see who's on. Whoever's a guest is usually doing something good, so look up what their brand or agency has done lately and judge it for yourself. Treat the episode as a lead: confirm brand, agency, campaign and date in a trade article before using it. Award-winning work they discuss can become a throwback.
+> - **Uncensored CMO** with Jon Evans (uncensoredcmo.com, every episode at uncensoredcmo.com/episodes): CMOs of big brands, a new episode most weeks.
+> - **HUNGRY.** with Dan Pope (open.spotify.com/show/23Q2M51LBXwGsxszG6iU6v): challenger food and drink brands. Spotify's page won't load for a fetcher, so find the episodes on Apple Podcasts or a podcast search.
+> - **On Strategy Showcase** (onstrategyshowcase.com, episodes at onstrategyshowcase.com/episode and the yearly pages like /2026): agency and client strategists on the story behind award-winning work, including Effie winners. Good for throwbacks.
+> - **Breaking & Entering's own podcast**, The Last Advertising Podcast (breaking-entering.com).
+>
 > 1. Find campaigns launched or first covered in the last 14 days (never more than 28 days before the day it runs) on: The Drum, Adweek, Ad Age, Campaign, LBB, Creative Review, Ads of the World, shots, Contagious, Muse by Clio, Marketing Week, Marketing Dive, Marketing Brew, B&T. Favour UK, US and European work, but pick anything genuinely interesting from anywhere. A clip reposted by a fan or influencer account is a lead, not a source: find who made it in a trade article.
 > 2. Skip anything already in `data/spotlights.json`. Don't repeat a brand or agency used in the last 7 days.
 > 3. Open the source article and confirm: brand, lead agency, campaign name, and launch or coverage date. If the brand, campaign or date isn't stated, pick something else. Never guess an agency: try hard to find it (trade articles, credits, LinkedIn posts, the agency's own site), but if the work is clearly real and great and no agency is credited anywhere, set `agency` to `No agency found` and `agencyKey` to `none`. Use that rarely.
