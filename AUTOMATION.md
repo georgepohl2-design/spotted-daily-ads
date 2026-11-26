@@ -65,6 +65,12 @@ flowchart LR
 > - **HUNGRY.** with Dan Pope (open.spotify.com/show/23Q2M51LBXwGsxszG6iU6v): challenger food and drink brands. Spotify's page won't load for a fetcher, so find the episodes on Apple Podcasts or a podcast search.
 > - **On Strategy Showcase** (onstrategyshowcase.com, episodes at onstrategyshowcase.com/episode and the yearly pages like /2026): agency and client strategists on the story behind award-winning work, including Effie winners. Good for throwbacks.
 > - **Breaking & Entering's own podcast**, The Last Advertising Podcast (breaking-entering.com).
+> - **The WARC Podcast** (podcasts.apple.com/us/podcast/the-warc-podcast/id1563243327, twice a week): effectiveness, attention and trends. Good for throwbacks and the thinking behind them.
+> - **The CMO Podcast** with Jim Stengel (podcasts.apple.com/us/podcast/the-cmo-podcast/id1460604334, weekly): big-brand CMOs. Look up what the guest's brand has done lately.
+> - **Exit Five** with Dave Gerhardt (exitfive.com/podcast, weekly): B2B marketing. A good place to find the B2B pick.
+> - **Marketing Against the Grain** (HubSpot; podcasts.apple.com/us/podcast/marketing-against-the-grain/id1616700934, twice a week): growth tactics and AI. Mostly how-to, so only a lead for odd growth tactics.
+> - **The Marketing Millennials** with Daniel Murray (podcasts.apple.com/us/podcast/id1527434899): creative marketing, creators, social and out-of-home.
+> - **Ad Age Marketer's Brief**: CMOs on their campaign playbooks. adage.com blocks robots, so find its episodes on Apple Podcasts or a podcast search.
 >
 > 1. Find campaigns launched or first covered in the last 14 days (never more than 28 days before the day it runs) on: The Drum, Adweek, Ad Age, Campaign, LBB, Creative Review, Ads of the World, shots, Contagious, Muse by Clio, Marketing Week, Marketing Dive, Marketing Brew, B&T. Favour UK, US and European work, but pick anything genuinely interesting from anywhere. A clip reposted by a fan or influencer account is a lead, not a source: find who made it in a trade article.
 > 2. Skip anything already in `data/spotlights.json`. Don't repeat a brand or agency used in the last 7 days.
