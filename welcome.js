@@ -14,8 +14,8 @@ const isWin = /Win/i.test(platform);
 
 const SETUP = isMac ? [
   'Click the button above (or open <b>System Settings</b>, then <b>Notifications</b>).',
-  'Click <b>Google Chrome</b>. Turn on <b>Allow notifications</b> and pick <b>Alerts</b>, so it stays until you click it.',
-  'If you see <b>Google Chrome Helper (Alerts)</b>, do the same there.',
+  'Click <b>Google Chrome</b>. Turn on <b>Allow notifications</b> and pick <b>Alerts</b>.',
+  'Now the important one: click <b>Google Chrome Helper (Alerts)</b> (further down the list) and do the same. The midday alert comes through this one, so if it\'s off you\'ll never see it.',
   'Make sure <b>Focus</b> (Do Not Disturb) is off at midday.',
 ] : isWin ? [
   'Click the button above (or open <b>Settings</b>, then <b>System</b>, then <b>Notifications</b>).',
@@ -36,10 +36,12 @@ function show(id) {
   for (const x of ['did-it', 'sorted', 'fix']) $(x).hidden = x !== id;
 }
 
+// Sent exactly like the real midday alert (stays on screen until clicked). On a Mac those
+// go through "Google Chrome Helper (Alerts)", so the test only passes if that's allowed too.
 async function notify(message, title = 'Spotted.') {
   await chrome.notifications.clear('spotted-test');
   await chrome.notifications.create('spotted-test', {
-    type: 'basic', iconUrl: 'icons/icon128.png', title, message, priority: 2,
+    type: 'basic', iconUrl: 'icons/icon128.png', title, message, priority: 2, requireInteraction: true,
   });
 }
 
@@ -67,7 +69,7 @@ async function sendTest() {
 $('send-test').addEventListener('click', sendTest);
 $('try-again').addEventListener('click', sendTest);
 $('yes').addEventListener('click', async () => {
-  await store.set('alertsOk', true);
+  await store.set('alertsChecked', true);
   show('sorted');
   $('send-test').textContent = 'Send another test';
 });

@@ -258,7 +258,7 @@ async function start() {
   showTab(TITLES[startTab] ? startTab : 'spotlight');
 
   // Until they've confirmed the test alert, nudge them to set it up.
-  if (hasExt && !(await store.get('alertsOk'))) $('alert-nudge').hidden = false;
+  if (hasExt && !(await store.get('alertsChecked'))) $('alert-nudge').hidden = false;
 
   // Opening the popup counts as "seen": clear the blue "1". It records the pick shown,
   // so a peek in the morning (yesterday's pick) doesn't cancel today's midday alert.

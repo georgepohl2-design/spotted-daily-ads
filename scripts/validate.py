@@ -163,7 +163,8 @@ if "--links" in sys.argv:
         status = check_link(url)
         ok = status == 200
         print(f"{'ok ' if ok else 'BAD'} {status} {url}")
-        if status not in (200, 403):  # 403 = site blocks robots but works in a browser
+        # 403, 202 and 429 = the site blocks or slows down robots, but the page works in a browser
+        if status not in (200, 202, 403, 429):
             err(f"link problem ({status}): {url}")
 
 if errors:
