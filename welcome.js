@@ -13,9 +13,8 @@ const isMac = /Mac/i.test(platform);
 const isWin = /Win/i.test(platform);
 
 const SETUP = isMac ? [
-  'Click the button above (or open <b>System Settings</b>, then <b>Notifications</b>).',
-  'Click <b>Google Chrome</b>. Turn on <b>Allow notifications</b> and pick <b>Alerts</b>.',
-  'Now the important one: click <b>Google Chrome Helper (Alerts)</b> (further down the list) and do the same. The midday alert comes through this one, so if it\'s off you\'ll never see it.',
+  'Click the button above. It opens <b>Google Chrome Helper (Alerts)</b> in your Mac\'s settings. (If you land on the full list instead, scroll down and click it.) This is the one the midday alert comes through.',
+  'Turn on <b>Allow notifications</b> and pick <b>Alerts</b>, so it stays on screen until you click it.',
   'Make sure <b>Focus</b> (Do Not Disturb) is off at midday.',
 ] : isWin ? [
   'Click the button above (or open <b>Settings</b>, then <b>System</b>, then <b>Notifications</b>).',
@@ -27,7 +26,10 @@ const SETUP = isMac ? [
   'Make sure Do Not Disturb is off at midday.',
 ];
 // Jump straight to the right settings page (the computer asks "Open System Settings?" first).
-const SETTINGS = isMac ? 'x-apple.systempreferences:com.apple.preference.notifications' : isWin ? 'ms-settings:notifications' : null;
+// On a Mac, straight to "Google Chrome Helper (Alerts)": the midday alert stays on screen,
+// and macOS sends those through that helper, not through "Google Chrome" itself.
+const MAC_ALERTS = 'x-apple.systempreferences:com.apple.Notifications-Settings.extension?id=com.google.Chrome.framework.AlertNotificationService';
+const SETTINGS = isMac ? MAC_ALERTS : isWin ? 'ms-settings:notifications' : null;
 if (SETTINGS) { $('open-settings').href = SETTINGS; $('open-settings').hidden = false; }
 
 $('setup-steps').innerHTML = SETUP.map((s) => `<li>${s}</li>`).join('');
@@ -50,9 +52,9 @@ async function testAlert() {
   try {
     const data = await loadData();
     const pick = pastPicks(data.spotlights.spotlights, todayISO())[0];
-    if (pick) return [alertMessage(pick), alertTitle(pick, true)];
+    if (pick) return [alertMessage(pick), alertTitle(pick)];
   } catch (_) { /* fall back below */ }
-  return ["You'll get one of these at 12:00 every weekday.", 'Spotted. Test alert'];
+  return ["You'll get one of these at 12:00 every weekday.", 'Spotted.'];
 }
 
 async function sendTest() {

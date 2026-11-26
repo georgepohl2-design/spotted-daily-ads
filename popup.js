@@ -14,6 +14,10 @@ const TODAY = /^\d{4}-\d{2}-\d{2}$/.test(params.get('date') || '') ? params.get(
 const TITLES = { spotlight: 'Spotted.', guru: 'Guru says', league: 'Spotted League Table', archive: 'Archive' };
 
 let DATA = null;
+let SEEN_BEFORE = null; // what 'lastSeen' was when this popup opened
+
+// Blue "New" tag: today's pick, the first time they open it. Gone the next time.
+const isUnseen = (pick) => hasExt && pick.featureDate === TODAY && SEEN_BEFORE !== pick.featureDate;
 
 // Small DOM helper: el('p', {class: 'x'}, 'text', childNode)
 function el(tag, attrs = {}, ...kids) {
@@ -42,8 +46,9 @@ function stickerText(award) {
   return [award.prize, award.show].filter(Boolean).join(' · ');
 }
 
-function renderCard(s) {
+function renderCard(s, fresh = false) {
   return el('article', { class: 'card' },
+    fresh ? el('span', { class: 'new-tag' }, 'New') : null,
     el('p', { class: 'label' }, s.throwback ? `Throwback ${weekday(s.featureDate)}: still slaps` : `Spotted ${s.format || 'ad'}:`),
     s.throwback && s.format && s.format !== 'ad' ? el('span', { class: 'format-tag' }, s.format) : null,
     s.b2b ? el('span', { class: 'format-tag' }, 'B2B') : null,
@@ -101,7 +106,7 @@ function renderSpotlight() {
   const box = $('tab-spotlight');
   const day = weekday(TODAY);
   if (WEEKEND[day]) box.replaceChildren(renderWeekend(day, pick));
-  else box.replaceChildren(pick ? renderCard(pick) : renderEmpty());
+  else box.replaceChildren(pick ? renderCard(pick, isUnseen(pick)) : renderEmpty());
   // Weekday morning: today's pick isn't out yet, so say when it lands.
   const today = spots.some((s) => s.featureDate === TODAY);
   if (!WEEKEND[day] && today && TODAY === todayISO() && beforeNoon()) {
@@ -250,6 +255,7 @@ async function start() {
   if (FEEDBACK_URL) $('feedback-link').href = FEEDBACK_URL;
 
   DATA = await loadData();
+  SEEN_BEFORE = await store.get('lastSeen');
   renderSpotlight();
   renderGuru();
   renderLeague();
@@ -257,7 +263,8 @@ async function start() {
   const startTab = params.get('tab');
   showTab(TITLES[startTab] ? startTab : 'spotlight');
 
-  // Until they've confirmed the test alert, nudge them to set it up.
+  // Until alerts are proven to work, nudge them to set it up. No way to dismiss it on purpose:
+  // it goes for good only once they say the test worked or click a Spotted alert.
   if (hasExt && !(await store.get('alertsChecked'))) $('alert-nudge').hidden = false;
 
   // Opening the popup counts as "seen": clear the blue "1". It records the pick shown,

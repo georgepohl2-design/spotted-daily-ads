@@ -209,8 +209,9 @@ main { padding: 12px 14px 4px; }
 [hidden] { display: none !important; }
 
 /* Reminder strip until the midday alert is tested */
-.alert-nudge { display: block; margin: 12px 14px 2px; background: #E8F0FE; color: #174EA6; font-weight: 700; font-size: 12px; line-height: 1.35; text-decoration: none; padding: 8px 12px; border: 1px solid #C6DAFC; border-radius: 10px; }
-.alert-nudge:hover { text-decoration: underline; }
+.alert-nudge { display: flex; align-items: center; gap: 8px; margin: 12px 14px 2px; background: #E8F0FE; color: #174EA6; font-weight: 700; font-size: 12px; line-height: 1.35; padding: 8px 8px 8px 12px; border: 1px solid #C6DAFC; border-radius: 10px; }
+.alert-nudge a { flex: 1; color: inherit; text-decoration: none; }
+.alert-nudge a:hover { text-decoration: underline; }
 .alert-nudge[hidden] { display: none; }
 
 /* Beta pill in the masthead */
@@ -222,3 +223,4 @@ main { padding: 12px 14px 4px; }
 .feedback a:hover { color: var(--ink); }
 .feedback[hidden] { display: none; }
 .drop-note { margin: 0 0 10px; padding: 6px 10px; background: #F1EFE8; border-radius: 8px; font-size: 12px; }
+.new-tag { display: inline-block; margin: 0 0 8px; padding: 2px 9px; background: #1A73E8; color: #fff; border-radius: 99px; font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; }

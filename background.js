@@ -98,6 +98,8 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
 
 chrome.notifications.onClicked.addListener(async (id) => {
   chrome.notifications.clear(id);
+  // Clicking an alert proves alerts work, so the popup stops asking them to set it up.
+  await store.set('alertsChecked', true);
   if (id === 'spotted-test') return;
   try {
     await chrome.action.openPopup();
